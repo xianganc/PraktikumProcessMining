@@ -54,18 +54,22 @@ For our project we mostly rely on well-established open source technology. This 
 \begin{itemize}
 \item Python 3.6 as back end programming language
 \item pm4py python library as process mining toolkit
-\item Flask as web framewrok
+\item Flask as web framework
 \item Hadoop as big data processing and distributed computation framework
+\item Docker as virtual machine and deploy platform
 \end{itemize}
 
 \noindent
 The pm4py library is a joint effort of the Fraunhofer FIT process mining group and the RWTH Process and Data Science group, which supports state-of-the-art process mining algorithms in python. It is completely open source and intended to be used in both academic and industry projects.\\
 
 \noindent
-Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.[3] It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. It is very suitable for our web application.\\
+Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. It is very suitable for our web application.\\
 
 \noindent
-Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. So we take its advantages in our project so that we can deal with the big data and distributed event log properly.
+Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the Map-Reduce programming model. So we take its advantages in our project so that we can deal with the big data and distributed event log properly.\\
+
+\noindent
+Docker is a computer program that performs operating-system-level virtualization. Docker is used to run software packages called containers. Containers are isolated from each other and bundle their own application, tools, libraries and configuration files; they can communicate with each other through well-defined channels. We will deploy our application on a production-grade server with Docker.
 
 \subsection{Risks and Mitigations}
 For our risk analysis we distinguish between project management related risks and technical risks. In order to reduce potential issues we define a list of strategies and countermeasures as general risk management.

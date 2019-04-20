@@ -1,19 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.2)  20 APR 2019 10:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.7)  20 APR 2019 12:03
 entering extended mode
-**./samplepaper.tex
-(samplepaper.tex
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**samplepaper.tex
+(./samplepaper.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
-(llncs.cls
+Babel <3.10> and hyphenation patterns for 22 language(s) loaded.
+(./llncs.cls
 Document Class: llncs 2018/03/10 v2.20 
  LaTeX document class for Lecture Notes in Computer Science
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.c
-ls"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.cl
-o"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -28,8 +26,7 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\multicol
-.sty"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 \c@tracingmulticols=\count87
 \mult@box=\box26
@@ -78,12 +75,10 @@ Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 \colbreak@box=\box51
 \mc@col@check@num=\count95
 )
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\alias
-cnt.sty"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/oberdiek/aliascnt.sty
 Package: aliascnt 2016/05/16 v1.4 Alias counters (HO)
 
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\carlisle\remre
-set.sty"))
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/carlisle/remreset.sty))
 \c@chapter=\count96
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -135,36 +130,39 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@remark=\count115
 \headlineindent=\dimen124
 )
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graph
-icx.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyva
-l.sty"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graph
-ics.sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.
-sty"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\g
-raphics.cfg"
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\p
-dftex.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count116
 ))
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
-) (samplepaper.aux)
+)
+(./samplepaper.aux)
 \openout1 = `samplepaper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -180,70 +178,28 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pd
-f.mkii"
+(/usr/local/texlive/2017basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
+\scratchcounter=\count117
 \scratchdimen=\dimen127
 \scratchbox=\box54
-\nofMPsegments=\count117
-\nofMParguments=\count118
+\nofMPsegments=\count118
+\nofMParguments=\count119
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count119
+\MPscratchCnt=\count120
 \MPscratchDim=\dimen128
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
 \everyMPtoPDFconversion=\toks20
+) (/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epsto
-pdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\inf
-warerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfex
-t.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvd
-efinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltx
-cmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvopt
-ions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvs
-etkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ete
-xcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifl
-uatex.sty"
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdf
-texcmds.sty"
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-("C:\Users\陈相安\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifp
-df.sty"
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -251,13 +207,38 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+)) (/usr/local/texlive/2017basic/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-)
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -277,73 +258,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
 [1
 
-{C:/Users/陈相安/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
 
-Underfull \hbox (badness 3746) in paragraph at lines 81--81
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 85--85
 []\OT1/cmr/m/n/10 Project team may mis-un-der-
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 85--85
+Underfull \hbox (badness 3872) in paragraph at lines 89--89
 []\OT1/cmr/m/n/10 Time con-flicts be-tween team
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1571) has occurred while \output is active []
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 
-Underfull \hbox (badness 4673) in paragraph at lines 103--103
+Underfull \hbox (badness 4673) in paragraph at lines 107--107
 []\OT1/cmr/m/n/10 Software com-po-nents do not
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--125
+Underfull \hbox (badness 10000) in paragraph at lines 118--129
 
  []
 
-[3] (samplepaper.bbl) [4] (samplepaper.aux) ) 
+[3] (./samplepaper.bbl) [4] (./samplepaper.aux) ) 
 Here is how much of TeX's memory you used:
- 1852 strings out of 493305
- 26986 string characters out of 3128063
- 93212 words of memory out of 3000000
- 5404 multiletter control sequences out of 15000+200000
- 5802 words of font info for 21 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,8n,25p,504b,166s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/陈相安/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/陈相�
-��/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Users/陈相安/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Users/陈相安/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr9.pfb><C:/Users/陈相安/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on samplepaper.pdf (4 pages, 98821 bytes).
+ 1906 strings out of 494437
+ 26888 string characters out of 6166645
+ 93663 words of memory out of 5000000
+ 5250 multiletter control sequences out of 15000+600000
+ 5802 words of font info for 21 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 39i,8n,25p,501b,166s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017basic/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017ba
+sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/20
+17basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
+/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
+ve/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on samplepaper.pdf (4 pages, 94553 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
