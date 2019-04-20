@@ -38,15 +38,26 @@ Process mining is an approach to extract process models from event logs. Since t
 
 \noindent
 To fulfill the shortcoming in the current process mining technology, this project aims to build a new python-based web service, that integrates the big data capabilities of the Hadoop system into the process mining framework pm4py.
-\section{Business Case}
+\section{Buisness Case}
 We develop a business case to disclose the potential of this project. The study is divided into three parts. First we explain one of the current algorithm in process mining. Furthermore we will define the scope of the project and point out the key benefits of our optimization.
 \subsection{Initial Situation}
+The current situation in process mining eventlogs using the Alpha algorithm is very centralized. All eventlogs are pushed together into one computation unit, eating up a big amout of resources, both in used space and computation time. The optimization of this is the main task.
 \subsection{Scope}
-\subsection{Key Benefits}
+The main goal of this project is to create a web application that provides callculations with the Alpha algorithm and can prepare the data using the Map-Reduce. The project contains these tasks:\\
+\begin{itemize}
+	\item[\cdot] \textbf{Code required:} Integrating the system Hadoop into the pm4py interface and read files from it
+	\item[\cdot] \textbf{Code required:} Run the Alpha algorithm utilizing map-reduce 
+	\item[\cdot] \textbf{Code required:} Reading in logs and upload them into Hadoop
+\end{itemize}
 
+\subsection{Key Benefits}
+The current scope of mining in Big Data is slow and centralized. Using map-reduce in combination with the Alpha algorithm, callculations can be deffered to more, smaller instances and also reduce overhead in transferring the events. Depending on the amount of  map-reduce stages that are implemented, there can be significantly less time used during the mining process, due to the parallized nature of the approach. \cite{mapReduce}
 \section{Feasibility Study}
 
 \subsection{Theoretical Point of View}
+A paper by Assadipour\cite{mapReduce} suggests that using a decentralized approach for process mining using the Alpha algorithm by splitting the callculations into smaller tasks available to smaller instances. \\ \ \\
+The Alpha algorithm takes eventlogs and generates a Petri net model including an initial and final mark. The main purpose of the Alpha algorithm is to portray the relations between activities, but comes with the flaw of not finding self loops.  \\ \ \\
+Map-Reduce is a technique to allow the user to have a scalable callculation on a distributed system. By first mapping events to an identifier and then reducing the map to its relevant values, the amount of needed data shrinks. Here the reductions prepare the data for the Alpha algorithm, removing the overhead of finding the traces first.
 \subsection{Technical Point of View}
 For our project we mostly rely on well-established open source technology. This includes primarily the following tools:\\
 
