@@ -16,7 +16,7 @@
 % an abbreviated paper title here
 %
 
-\author{{\large Martin Hashem, Xiangan Chen}}
+\author{Martin Hashem, Xiangan Chen}
 
 \institute{
 \today \\
@@ -34,6 +34,10 @@ RWTH Aachen \\
 %
 %
 \section{Overview}
+Process mining is an approach to extract process models from event logs. Since the distributed nature of modern information systems, event logs are likely to be distributed among different physical machines. Map-Reduce is a scalable approach for efficient computations on distributed data. In this Python application we will present the main idea of a Map-Reduce implementation of the Alpha process mining algorithm, to take advantage of the scalability of the Map-Reduce approach.\\
+
+\noindent
+To fulfill the shortcoming in the current process mining technology, this project aims to build a new python-based web service, that integrates the big data capabilities of the Hadoop system into the process mining framework pm4py.
 \section{Business Case}
 We develop a business case to disclose the potential of this project. The study is divided into three parts. First we explain one of the current algorithm in process mining. Furthermore we will define the scope of the project and point out the key benefits of our optimization.
 \subsection{Initial Situation}
@@ -44,10 +48,62 @@ We develop a business case to disclose the potential of this project. The study 
 
 \subsection{Theoretical Point of View}
 \subsection{Technical Point of View}
-\subsection{Risks and Mitigations}
+For our project we mostly rely on well-established open source technology. This includes primarily the following tools:\\
 
-	\subsubsection{Project Managment Risks}
-	\subsubsection{Technical Risks}
+
+\begin{itemize}
+\item Python 3.6 as back end programming language
+\item pm4py python library as process mining toolkit
+\item Flask as web framewrok
+\item Hadoop as big data processing and distributed computation framework
+\end{itemize}
+
+\noindent
+The pm4py library is a joint effort of the Fraunhofer FIT process mining group and the RWTH Process and Data Science group, which supports state-of-the-art process mining algorithms in python. It is completely open source and intended to be used in both academic and industry projects.\\
+
+\noindent
+Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.[3] It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. It is very suitable for our web application.\\
+
+\noindent
+Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. So we take its advantages in our project so that we can deal with the big data and distributed event log properly.
+
+\subsection{Risks and Mitigations}
+For our risk analysis we distinguish between project management related risks and technical risks. In order to reduce potential issues we define a list of strategies and countermeasures as general risk management.
+
+\subsubsection{Project Managment Risks}
+
+The following table covers potential organizational risks and countermeasures:\\
+
+\renewcommand\arraystretch{1.5}
+\begin{tabular}{p{5cm}|p{6cm}}
+	Risk& Mitigation\\
+	\hline
+	Project team may misunderstand requirements.& Requirement misinterpretation can be mitigated by discussing between group members and frequent meetings with our advisors. Open questions should be addressed as soon as possible.\\
+	\hline
+	Learning curves lead to delays and cost overrun.& The degree of modularization depicted according to the project plan allows each team member to focus on a half set of skills only.\\
+	\hline
+	Time conflicts between team members.& Regular feedback communications.\\
+	\hline
+	Features are developed twice or not at all.& Since we have a two-man team, we will devide the tasks clearly and discuss them often.\\
+\end{tabular}
+
+\subsubsection{Technical Risks}
+
+Since the Apache Hadoop and Flask are open source softwares, they bring us some significant advantages such as free to use, but they also have some limitations as compared to the commercial ones. In the following table technical related risks are considered:\\
+
+\renewcommand\arraystretch{1.5}
+\begin{tabular}{p{5cm}|p{6cm}}
+	Risk& Mitigation\\
+	\hline
+	No formal support contracts.& Restrict to well-documented and established open
+	source software.\\
+	\hline
+	Graphical user interface is not user-friendly.& Improve user interface in the frontend in an agile manner.\\
+	\hline
+	Software components do not work together.& Define clear and well structured interfaces in the early design phase.\\
+	\hline
+	Uploaded file not recognizable.& Appoint a obvious sign on the frontend site to notify the user to upload the correct format.\\
+\end{tabular}
 
 \section{Project Plan}
 \section{Project Team}
