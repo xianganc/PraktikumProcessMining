@@ -31,7 +31,7 @@ RWTH Aachen \\
 %150--250 words.
 %\end{abstract}
 %
-%
+%	
 %
 \section{Overview}
 Process mining is an approach to extract process models from event logs. Since the distributed nature of modern information systems, event logs are likely to be distributed among different physical machines. Map-Reduce is a scalable approach for efficient computations on distributed data. In this Python application we will present the main idea of a Map-Reduce implementation of the Alpha process mining algorithm, to take advantage of the scalability of the Map-Reduce approach.\\
@@ -45,11 +45,24 @@ The current situation in process mining eventlogs using the Alpha algorithm is v
 \subsection{Scope}
 The main goal of this project is to create a web application that provides callculations with the Alpha algorithm and can prepare the data using the Map-Reduce. The project contains these tasks:\\
 \begin{itemize}
-	\item[\HUGE $\cdot$] \textbf{Code required:} Integrating the system Hadoop into the pm4py interface and read files from it
-	\item[$\cdot$] \textbf{Code required:} Run the Alpha algorithm utilizing map-reduce 
-	\item[$\cdot$] \textbf{Code required:} Reading in logs and upload them into Hadoop
+	\item[\Large $\cdot$] \textbf{Code required:} Integrating the system Hadoop into the pm4py interface and read files from it
+	\item[\Large $\cdot$] \textbf{Code required:} Run the Alpha algorithm utilizing map-reduce 
+	\item[\Large $\cdot$] \textbf{Code required:} Reading in logs and upload them into Hadoop
 \end{itemize}
-
+The web service is to be accessed by a standart browser and needs to provide the folowing functionalities:
+\begin{itemize}
+	\item[\Large $\cdot$] Upload eventlogs in either CSV or XES format to the Hadoop system
+	\item[\Large $\cdot$] Front end links to existing algorithms for further processing
+	\item[\Large $\cdot$] Do map –reduce computations to run the alpha algorithm
+	\item[\Large $\cdot$] Download the files onto local system
+\end{itemize}
+Additionally these documentations will be provided to bring insights to our software development cycle:
+\begin{itemize}
+	\item[\Large $\cdot$]  Project initiation document
+	\item[\Large $\cdot$]  Requirement analysis document
+	\item[\Large $\cdot$]  Design document
+	\item[\Large $\cdot$]  Software documentation
+\end{itemize}
 \subsection{Key Benefits}
 The current scope of mining in Big Data is slow and centralized. Using map-reduce in combination with the Alpha algorithm, callculations can be deffered to more, smaller instances and also reduce overhead in transferring the events. Depending on the amount of  map-reduce stages that are implemented, there can be significantly less time used during the mining process, due to the parallized nature of the approach. \cite{mapReduce}
 \section{Feasibility Study}
@@ -63,11 +76,11 @@ For our project we mostly rely on well-established open source technology. This 
 
 
 \begin{itemize}
-\item Python 3.7 as back end programming language
-\item pm4py python library as process mining toolkit
-\item Flask as web framework
-\item Hadoop as big data processing and distributed computation framework
-\item Docker as virtual machine and deploy platform
+	\item[\Large $\cdot$]   Python 3.7 as back end programming language
+	\item[\Large $\cdot$]   pm4py python library as process mining toolkit
+	\item[\Large $\cdot$]   Flask as web framework
+	\item[\Large $\cdot$]   Hadoop as big data processing and distributed computation framework
+	\item[\Large $\cdot$]   Docker as virtual machine and deploy platform
 \end{itemize}
 
 \noindent
@@ -121,6 +134,7 @@ Since the Apache Hadoop and Flask are open source softwares, they bring us some 
 \end{tabular}
 
 \section{Project Plan}
+\includegraphics[scale=.3333]{Gantt.jpg}
 \section{Project Team}
 The project team consists of two persons. The following roles have been assigned to reflect individual strengths and competences:\\
 
