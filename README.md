@@ -1,1 +1,2 @@
 # PraktikumProcessMining
+Default branch
