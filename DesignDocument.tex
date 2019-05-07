@@ -1,0 +1,101 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+% Add your own packages here
+\usepackage{graphicx}
+%
+\begin{document}
+%
+\title{Process Discovery using Big Data stack - Implementing the Alpha Algorithm with Map-Reduce}
+\subtitle{Design Specification Document}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+
+\author{Martin Hashem, Xiangan Chen}
+
+\institute{
+\today \\
+RWTH Aachen \\
+%\date{01 Apr 2019}
+}
+%
+\maketitle              % typeset the header of the contribution
+%
+%\begin{abstract}
+%The abstract should briefly summarize the contents of the paper in
+%150--250 words.
+%\end{abstract}
+%
+%	
+%
+\section{Introduction}
+Process mining is an approach to extract process models from event logs. Since the distributed nature of modern information systems, event logs are likely to be distributed among different physical machines. Map-Reduce is a scalable approach for efficient computations on distributed data. In this Python application we will present the main idea of a Map-Reduce implementation of the Alpha process mining algorithm, to take advantage of the scalability of the Map-Reduce approach.\\
+
+\noindent
+To fulfill the shortcoming in the current process mining technology, this project aims to build a new python-based web service, that integrates the big data capabilities of the Hadoop system into the process mining framework pm4py.\\
+
+\noindent
+This document is presented for our shareholders of the project.
+
+\noindent
+Within our project we mostly apply well-established open source applications, which includes the following tools with version numbers:
+
+\begin{itemize}
+	\item[\Large $\cdot$]   Python 3.6 as back end programming language
+	\item[\Large $\cdot$]   pm4py 1.1.10  as process mining toolkit
+	\item[\Large $\cdot$]   Flask 1.0.2 as web framework
+	\item[\Large $\cdot$]   Hadoop 3.2.0 as big data processing and distributed computation framework
+	\item[\Large $\cdot$]   Docker CE as deploy platform
+\end{itemize}
+
+\noindent
+This very document is one of these, which will be provided to bring insights to our software development cycle:
+
+\begin{itemize}
+	\item[\Large $\cdot$]  Project initiation document
+	\item[\Large $\cdot$]  Requirements analysis document
+	\item[\Large $\cdot$]  Design specification document
+	\item[\Large $\cdot$]  Software documentation
+\end{itemize}
+
+\section{System Overview}
+The main goal of this project is to create a web application that provides calculations with the Alpha algorithm and can prepare the data using the Map-Reduce. \\
+
+\noindent
+The web service is to be accessed by a standard browser and needs to provide the following functionalities:
+\begin{itemize}
+	\item[\Large $\cdot$] Upload event logs in either CSV or XES format into the Hadoop system
+	\item[\Large $\cdot$] Front end links to existing algorithms for further processing
+	\item[\Large $\cdot$] Do Map-Reduce computations to run the alpha algorithm
+	\item[\Large $\cdot$] Download the files onto local system
+\end{itemize}
+
+\section{Design Considerations}
+\subsection{Assumptions and Dependencies}
+The current situation in process mining eventlogs using the Alpha algorithm is very centralized. All eventlogs are pushed together into one computation unit, eating up a big amout of resources, both in used space and computation time. The optimization of this is the main task.
+\subsection{General Constraints}
+
+
+\subsection{Goals and Guidelines}
+
+\subsection{Development Methods}
+
+\section{Architectural Strategies}
+\section{System Architecture}
+\section{Policies and Tactics}
+\section{Detailed System Design}
+
+
+
+
+
+% Start bibliography
+\bibliographystyle{alpha}
+\bibliography{ProjectInitiation}
+
+\end{document}
