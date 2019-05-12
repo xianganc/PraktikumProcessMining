@@ -5,6 +5,7 @@
 \documentclass[runningheads]{llncs}
 % Add your own packages here
 \usepackage{graphicx}
+\usepackage{url}
 %
 \begin{document}
 %
@@ -81,9 +82,17 @@ The web service is to be accessed by a standard browser and needs to provide the
 \subsection{General Constraints}
 (Martin)
 \subsection{Goals and Guidelines}
-(Xiangan)
+
+\begin{itemize}
+	\item[\Large $\cdot$] Simple:
+	One of the main guidelines through our system design is simple. From the frontend part to the backend, from the UIs to the layout, we set the simpleness on the crucial level.\\
+	\item[\Large $\cdot$] Resource-saving:
+	The other goal of our design is resource-saving. Not only in our implement but also the outcoming software, we consume resources as little as possible, inclusive CPU computing time , storage and server occupancy. 
+\end{itemize}
+
 \subsection{Development Methods}
-(Xiangan)
+
+Scrum is our first choice of development method. Since we have a small team, so an agile and intensive development method should fit us better. So instead of the classic waterfall model development, our team prefer Scrum. Scrum is a lightweight, iterative and incremental framework for managing product development. And enables our team to self-organize by encouraging physical co-location or close online collaboration of all team members, as well as daily face-to-face communication among all team members.\cite{wiki:xxx}
 
 \section{Architectural Strategies}
 \section{System Architecture}
@@ -94,6 +103,6 @@ The web service is to be accessed by a standard browser and needs to provide the
 
 % Start bibliography
 \bibliographystyle{alpha}
-\bibliography{ProjectInitiation}
+\bibliography{DesignDocument}
 
 \end{document}
