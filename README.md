@@ -1,2 +1,2 @@
-# PraktikumProcessMining
+#PraktikumProcessMining
 Whole complete project
