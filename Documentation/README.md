@@ -1,3 +1,2 @@
 # PraktikumProcessMining
-
-Whole complete project
+Documentation

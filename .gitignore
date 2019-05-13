@@ -3,3 +3,5 @@
 *.gz
 *.aux
 *.bbl
+*.txt
+latex-template/
