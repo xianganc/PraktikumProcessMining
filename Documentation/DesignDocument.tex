@@ -86,6 +86,88 @@ Scrum is our first choice of development method. Since we have a small team, so 
 \section{System Architecture}
 \section{Policies and Tactics}
 \section{Detailed System Design}
+\subsection{login}
+\begin{itemize}
+	\item[Name:] signIn
+	\item[Returns:] -
+	\item[Arguments:] -
+	\item[Description:] links to the signIn page to let new user to register.
+\end{itemize}
+
+\begin{itemize}
+	\item[Name:] login
+	\item[Returns:] -
+	\item[Arguments:] username(String), password(String)
+	\item[Description:] with the previously registered userdata the user can login to the index page (dashboard).
+\end{itemize}
+
+\begin{itemize}
+	\item[Name:] reset
+	\item[Returns:] -
+	\item[Arguments:] -
+	\item[Description:] clears all filled items of the login page.
+\end{itemize}
+
+\subsection{signIn}
+\begin{itemize}
+	\item[Name:] register
+	\item[Returns:] Boolean
+	\item[Arguments:] username(String), password(String), email(String).
+	\item[Description:] lets new user to register, and returns Ture when all information are valid.
+\end{itemize}
+
+
+\begin{itemize}
+	\item[Name:] reset
+	\item[Returns:] -
+	\item[Arguments:] -
+	\item[Description:] clears all filled items of the signIn page.
+\end{itemize}
+
+\subsection{dashboard}
+\begin{itemize}
+	\item[Name:] upload
+	\item[Returns:] Boolean
+	\item[Arguments:] File
+	\item[Description:] uploads the from user selected file, will return a boolean of success.
+\end{itemize}
+
+\begin{itemize}
+	\item[Name:] reset
+	\item[Returns:] -
+	\item[Arguments:] -
+	\item[Description:] deletes the uploaded file and ready to recieve a new one.
+\end{itemize}
+
+\begin{itemize}
+	\item[Name:] proceed
+	\item[Returns:] Boolean
+	\item[Arguments:] File
+	\item[Description:] tests if the uploaded file is valid, if so it will transfer the file to backend system,and return a True.
+\end{itemize}
+
+\subsection{result}
+\begin{itemize}
+	\item[Name:] show
+	\item[Returns:] Graph(svg)
+	\item[Arguments:] Net, initMark, finMark
+	\item[Description:] gets the result from alpha algorithm calculation and presents the result of the processed file in petri-net.
+\end{itemize}
+
+\begin{itemize}
+	\item[Name:] download
+	\item[Returns:] -
+	\item[Arguments:] Graph(svg)
+	\item[Description:] allows user to download the graph of proceeded file onto local system.
+\end{itemize}
+
+\begin{itemize}
+	\item[Name:] furtherProcess
+	\item[Returns:] -
+	\item[Arguments:] Net, initMark, finMark
+	\item[Description:] transfers the raw file from alpha calculation to PM4py for further process.
+\end{itemize}
+
 \subsection{hadoopManager}
 \begin{itemize}
 \item[Name:] pushData
