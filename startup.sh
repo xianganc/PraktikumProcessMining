@@ -6,7 +6,7 @@ sudo add-apt-repository \
   $(lsb_release -cs) \
   stable"
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 sudo apt-get install -y \
   python3.6 \
   python3-pip \
@@ -14,8 +14,14 @@ sudo apt-get install -y \
   ca-certificates \
   curl \
   gnupg-agent \
-  software-properties-common
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+  software-properties-common \
+  git \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io
 
-curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz -o hadoop.tar.gz
+git clone https://github.com/xianganc/PraktikumProcessMining.git
+cd PraktikumProcessMining/integration
+curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o hadoop.tar.gz
 tar -xzf  hadoop.tar.gz
+mv hadoop-3.2.0 hadoop
