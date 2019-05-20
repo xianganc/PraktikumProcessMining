@@ -5,4 +5,5 @@ tar -xzf  hadoop.tar.gz ;
 mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
-trap terminate 2 15
+while : ; do
+done
