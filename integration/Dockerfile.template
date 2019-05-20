@@ -8,9 +8,9 @@ RUN mkdir \
   /deps \
   /src
 
-COPY ./src /src
+COPY ./src/ /src
 COPY ./bin/* /usr/sbin
-COPY ./deps /deps
+COPY ./deps/ /deps
 
 RUN chmod +x /usr/sbin/* && chmod +x /deps/init.sh
 
