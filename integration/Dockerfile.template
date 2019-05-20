@@ -1,9 +1,8 @@
 FROM ubuntu:18.04
 ENV INITSYSTEM on
 
-
-RUN chmod +x ./deps/deps.sh && ./deps/deps.sh
-
+COPY ./deps/deps.sh /deps.sh
+RUN chmod +x /deps.sh && /deps.sh
 
 RUN mkdir \
   /deps
