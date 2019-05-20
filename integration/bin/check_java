@@ -1,2 +1,2 @@
 #!/bin/bash
-updates-alternatives --display java | grep -e best
+update-alternatives --display java | grep -e best
