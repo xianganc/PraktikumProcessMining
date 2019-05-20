@@ -6,4 +6,5 @@ apt-get install -y \
   python3-pip \
   curl \
   default-jre \
+  ssh \
   sudo
