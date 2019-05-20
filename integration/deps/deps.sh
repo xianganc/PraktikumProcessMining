@@ -5,4 +5,5 @@ apt-get install -y \
   python3.6 \
   python3-pip \
   curl \
-  default-jre
+  default-jre \
+  sudo

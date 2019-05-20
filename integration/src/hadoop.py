@@ -55,4 +55,3 @@ with open("/hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
 java_path = subprocess.check_output(["check_java"]).decode("utf-8").split()[-1][:-8]
 with open("/hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
   envfile.write("export JAVA_HOME="+java_path)
-subprocess.check_output(["/usr/sbin/start_hadoop"])
