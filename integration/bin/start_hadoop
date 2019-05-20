@@ -1,0 +1,2 @@
+#!bin/bash
+/hadoop/sbin/start-dfs.sh

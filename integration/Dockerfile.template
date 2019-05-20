@@ -5,8 +5,13 @@ COPY ./deps/deps.sh /deps.sh
 RUN chmod +x /deps.sh && /deps.sh
 
 RUN mkdir \
-  /deps
+  /deps \
+  /src
+
+COPY ./src /src
+COPY ./bin/* /usr/sbin
 COPY ./deps /deps
-RUN chmod +x /deps/init.sh
+
+RUN chmod +x /usr/sbin/* && chmod +x /deps/init.sh
 
 CMD /deps/init.sh

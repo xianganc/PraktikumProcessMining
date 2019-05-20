@@ -11,7 +11,6 @@ sudo apt-get install -y \
   python3-pip \
   apt-transport-https \
   ca-certificates \
-  curl \
   gnupg-agent \
   software-properties-common \
   git \
