@@ -52,6 +52,9 @@ if __name__ == "__main__":
     </configuration>"""
   with open("/hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
     configfile.write(config)
+  java_path = subprocess.check_output(["check_java"]).decode("utf-8").split()[-1]
+  with open("/hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
+    envfile.write("export JAVA_HOME="+java_path)
   subprocess.check_output(["/bin/start_hadoop"])
 
   pass
