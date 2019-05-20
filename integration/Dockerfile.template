@@ -8,4 +8,5 @@ RUN mkdir \
   /deps
 COPY ./deps /deps
 RUN chmod +x /deps/init.sh
+
 CMD /deps/init.sh
