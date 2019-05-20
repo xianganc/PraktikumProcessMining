@@ -6,7 +6,6 @@ sudo add-apt-repository \
   $(lsb_release -cs) \
   stable"
 sudo apt-get update
-sudo apt-get upgrade -y
 sudo apt-get install -y \
   python3.6 \
   python3-pip \
@@ -28,3 +27,4 @@ cd PraktikumProcessMining/integration
 curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o hadoop.tar.gz
 tar -xzf  hadoop.tar.gz
 mv hadoop-3.2.0 hadoop
+git checkout integration
