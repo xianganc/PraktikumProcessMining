@@ -6,4 +6,3 @@ services:
       context: './integration'
       dockerfile: './Dockerfile.template'
     privileged: 'true'
-    restart: 'always'
