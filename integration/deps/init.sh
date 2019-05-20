@@ -8,6 +8,8 @@ mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
 python3 /src/hadoop.py
+runuser -l hadoop -c 'sh-keygen -t rsa -N "" -f ~/.ssh/id_rsa'
+runuser -l hadoop -c 'ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop@node-master'
 /hadoop/bin/hdfs namenode -format
 start_hadoop
 
