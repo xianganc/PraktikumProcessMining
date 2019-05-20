@@ -1,1 +1,9 @@
 version: '0.1'
+
+services:
+  integration:
+    build:
+      context: '.'
+      dockerfile: './integration/Dockerfile.template'
+    privileged: 'true'
+    restart: 'always'
