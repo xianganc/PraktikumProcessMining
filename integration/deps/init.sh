@@ -6,4 +6,5 @@ mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
 while 1 ; do
+  ;
 done
