@@ -11,3 +11,6 @@ services:
       context: './frontend'
       dockerfile: './Dockerfile.template'
     privileged: 'true'
+    ports:
+      - "80:80"
+      - "443:443"
