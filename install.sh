@@ -34,5 +34,5 @@ sudo chmod 600 ~/.ssh/id_rsa
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
 hadoop/bin/hdfs dfsadmin -report
-echo 'DEFAULT_FORWARD_POLICY="ACCEPT"' >> /etc/default/ufw
+sudo echo 'DEFAULT_FORWARD_POLICY="ACCEPT"' >> /etc/default/ufw
 sudo docker-compose up --build -d
