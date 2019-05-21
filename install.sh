@@ -21,7 +21,6 @@ sudo apt-get install -y \
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ;
 sudo chmod +x /usr/local/bin/docker-compose ;
 
-cd PraktikumProcessMining ;
 git checkout integration ;
 
 curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o hadoop.tar.gz ;
