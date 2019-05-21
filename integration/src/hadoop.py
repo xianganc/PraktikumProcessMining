@@ -52,7 +52,7 @@ config = """<configuration>
   </configuration>"""
 with open("./hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
   configfile.write(config)
-java_path = subprocess.check_output(["check_java"]).decode("utf-8").split()[-1][:-8]
+java_path = subprocess.check_output("update-alternatives --display java | grep -e best".split).decode("utf-8").split()[-1][:-8]
 with open("./hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
   envfile.write("export JAVA_HOME="+java_path)
 with open("/etc/hosts","a") as hosts:
