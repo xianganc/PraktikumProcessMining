@@ -11,7 +11,6 @@ config = """<configuration>
 with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
   configfile.write(config)
 config = """<configuration>
-<configuration>
     <property>
         <name>dfs.replication</name>
         <value>1</value>
