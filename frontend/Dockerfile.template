@@ -7,7 +7,8 @@ RUN mkdir \
   /src
 
 COPY ./deps/ /deps/
+COPY ./src/ /src/
 
-RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
+RUN chmod +x /deps/*.sh && /deps/deps.sh
 
 CMD /deps/init.sh
