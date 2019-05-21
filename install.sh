@@ -31,4 +31,6 @@ sudo python3 ~/PraktikumProcessMining/integration/src/hadoop.py
 cp ~/PraktikumProcessMining/sshFile/aws_ssh ~/.ssh/id_rsa
 sudo chmod 600 ~/.ssh/id_rsa
 hadoop/bin/hdfs namenode -format
+hadoop/sbin/start_dfs.sh
+hadoop/bin/hdfs dfsadmin -report
 sudo docker-compose up --build -d
