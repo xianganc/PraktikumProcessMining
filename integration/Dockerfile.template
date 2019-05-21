@@ -12,5 +12,5 @@ COPY ./bin/* /usr/sbin/
 
 RUN chmod +x /deps/deps.sh && /deps/deps.sh
 RUN chmod +x /usr/sbin/* && chmod +x /deps/init.sh
-
+VOLUME [ "/sys/fs/cgroup" ]
 CMD /deps/init.sh

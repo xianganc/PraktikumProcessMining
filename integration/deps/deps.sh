@@ -7,4 +7,5 @@ apt-get install -y \
   curl \
   default-jre \
   ssh \
-  sudo
+  sudo \
+  ufw
