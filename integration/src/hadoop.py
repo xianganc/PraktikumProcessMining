@@ -2,28 +2,23 @@ import subprocess
 
 
 #print("There are some setup questions incoming")
-#config = """<?xml version="1.0" encoding="UTF-8"?>
-#  <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-#  <configuration>
-#      <property>
-#          <name>fs.default.name</name>
-#          <value>hdfs://node-master:9000</value>
-#      </property>
-#  </configuration>"""
-#with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
-#  configfile.write(config)
-#config = """<configuration>
-#  <property>
-#          <name>dfs.namenode.name.dir</name>
-#          <value>/home/ubuntu/data/nameNode</value>
-#  </property>
-#  <property>
-#            <name>dfs.datanode.data.dir</name>
-#            <value>/home/ubuntu/data/dataNode</value>
-#    </property>
-#  </configuration>"""
-#with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
-#  configfile.write(config)
+config = """<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>"""
+with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
+  configfile.write(config)
+config = """<configuration>
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>"""
+with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
+  configfile.write(config)
 #config = """<configuration>
 #  <property>
 #          <name>yarn.acl.enable</name>
