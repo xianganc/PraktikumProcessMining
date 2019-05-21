@@ -1,16 +1,16 @@
 FROM ubuntu:18.04
 ENV INITSYSTEM on
 
-COPY ./deps/deps.sh /deps.sh
-RUN chmod +x /deps.sh && /deps.sh
 
 RUN mkdir \
   /deps \
   /src
 
+COPY ./deps/ /deps/
 COPY ./src/ /src/
 COPY ./bin/* /usr/sbin/
-COPY ./deps/ /deps/
+
+RUN chmod +x /deps.sh && /deps.sh && rm /deps.sh
 
 RUN chmod +x /usr/sbin/* && chmod +x /deps/init.sh
 

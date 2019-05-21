@@ -6,3 +6,13 @@ services:
       context: './integration'
       dockerfile: './Dockerfile.template'
     privileged: 'true'
+  backend:
+    build:
+      context: './backend'
+      dockerfile: './Dockerfile.template'
+    privileged: 'true'
+  frontend:
+    build:
+      context: './frontend'
+      dockerfile: './Dockerfile.template'
+    privileged: 'true'
