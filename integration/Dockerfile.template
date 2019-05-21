@@ -10,8 +10,7 @@ COPY ./deps/ /deps/
 COPY ./src/ /src/
 COPY ./bin/* /usr/sbin/
 
-RUN chmod +x /deps.sh && /deps.sh && rm /deps.sh
-
+RUN chmod +x /deps/deps.sh && /deps/deps.sh
 RUN chmod +x /usr/sbin/* && chmod +x /deps/init.sh
 
 CMD /deps/init.sh
