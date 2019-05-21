@@ -27,4 +27,4 @@ rm hadoop.tar.gz ;
 
 python3 ~/PraktikumProcessMining/integration/src/hadoop.py
 /hadoop/bin/hdfs namenode -format
-sudo docker-compose up --build
+sudo docker-compose up --build -d
