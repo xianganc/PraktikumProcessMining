@@ -27,6 +27,8 @@ mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
 chmod +x ~/PraktikumProcessMining/integration/bin*
-python3 ~/PraktikumProcessMining/integration/src/hadoop.py
-/hadoop/bin/hdfs namenode -format
+sudo python3 ~/PraktikumProcessMining/integration/src/hadoop.py
+cp ~/PraktikumProcessMining/sshFile/aws_ssh ~/.ssh/id_rsa
+sudo chmod 600 ~/.ssh/id_rsa
+hadoop/bin/hdfs namenode -format
 sudo docker-compose up --build -d
