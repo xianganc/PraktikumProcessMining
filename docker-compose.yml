@@ -9,6 +9,10 @@ services:
       context: '.'
       dockerfile: './integration/Dockerfile.template'
     privileged: 'true'
+    volumes:
+      - $SSH_AUTH_SOCK:/ssh-agent
+    environment:
+        SSH_AUTH_SOCK: /ssh-agent
   backend:
     build:
       context: './backend'
