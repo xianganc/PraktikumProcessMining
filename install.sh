@@ -21,19 +21,19 @@ sudo apt-get install -y \
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ;
 sudo chmod +x /usr/local/bin/docker-compose ;
 
-git clone https://github.com/xianganc/PraktikumProcessMining.git ;
-cd PraktikumProcessMining/integration ;
-
+cd PraktikumProcessMining ;
 git checkout integration ;
 
 sudo useradd -p hadoop hadoop
 sudo usermod -aG sudo hadoop
-curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o hadoop.tar.gz ;
+mkdir /home/hadoop/
+cd /home/hadoop/
+curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o /home/hadoop/hadoop.tar.gz ;
 tar -xzf  hadoop.tar.gz ;
 mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
-python3 /src/hadoop.py
+python3 ~/PraktikumProcessMining/src/hadoop.py
 chown -R hadoop:hadoop /home/hadoop/
 /hadoop/bin/hdfs namenode -format
-sudo docker-compose up
+sudo docker-compose up --build
