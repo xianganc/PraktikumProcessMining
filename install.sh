@@ -13,7 +13,6 @@ sudo apt-get install -y \
   ca-certificates \
   gnupg-agent \
   software-properties-common \
-  git \
   docker-ce \
   docker-ce-cli \
   containerd.io
