@@ -1,14 +1,6 @@
 version: '2.1'
 
-volumes:
-  ssh:
-
 services:
-  integration:
-    build:
-      context: '.'
-      dockerfile: './integration/Dockerfile.template'
-    privileged: 'true'
   backend:
     build:
       context: './backend'

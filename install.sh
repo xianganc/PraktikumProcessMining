@@ -33,7 +33,7 @@ tar -xzf  hadoop.tar.gz ;
 mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
-python3 ~/PraktikumProcessMining/src/hadoop.py
+python3 ~/PraktikumProcessMining/integration/src/hadoop.py
 chown -R hadoop:hadoop /home/hadoop/
 /hadoop/bin/hdfs namenode -format
 sudo docker-compose up --build
