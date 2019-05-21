@@ -9,8 +9,8 @@ rm hadoop.tar.gz ;
 
 python3 /src/hadoop.py
 mkdir -p /home/hadoop/.ssh/
-cp /shared/ssh/aws_ssh /home/hadoop/.ssh/id_rsa
 chown -R hadoop:hadoop /home/hadoop/.ssh/
+runuser -u hadoop -c 'ssh-keygem -b 4096 -N "" -f /home/hadoop/.ssh/id_rsa'
 /hadoop/bin/hdfs namenode -format
 start_hadoop
 
