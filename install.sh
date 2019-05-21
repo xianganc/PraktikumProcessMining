@@ -26,7 +26,7 @@ git checkout integration ;
 
 sudo useradd -p hadoop hadoop
 sudo usermod -aG sudo hadoop
-mkdir /home/hadoop/
+sudo mkdir /home/hadoop/
 cd /home/hadoop/
 curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o /home/hadoop/hadoop.tar.gz ;
 tar -xzf  hadoop.tar.gz ;
