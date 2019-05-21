@@ -8,6 +8,6 @@ RUN mkdir \
 
 COPY ./deps/ /deps/
 
-RUN chmod +x /deps.sh && /deps.sh && rm /deps.sh && chmod +x /deps/init.sh
+RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
 
 CMD /deps/init.sh

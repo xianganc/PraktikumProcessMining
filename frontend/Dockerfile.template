@@ -1,0 +1,13 @@
+FROM ubuntu:18.04
+ENV INITSYSTEM on
+
+
+RUN mkdir \
+  /deps \
+  /src
+
+COPY ./deps/ /deps/
+
+RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
+
+CMD /deps/init.sh
