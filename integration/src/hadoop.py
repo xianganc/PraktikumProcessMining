@@ -10,7 +10,7 @@ config = """<?xml version="1.0" encoding="UTF-8"?>
           <value>hdfs://node-master:9000</value>
       </property>
   </configuration>"""
-with open("/hadoop/etc/hadoop/core-site.xml","w") as configfile:
+with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
   configfile.write(config)
 config = """<configuration>
   <property>
@@ -18,7 +18,7 @@ config = """<configuration>
           <value>/home/hadoop/data/nameNode</value>
   </property>
   </configuration>"""
-with open("/hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
+with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
   configfile.write(config)
 config = """<configuration>
   <property>
@@ -50,10 +50,10 @@ config = """<configuration>
           <value>false</value>
   </property>
   </configuration>"""
-with open("/hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
+with open("./hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
   configfile.write(config)
 java_path = subprocess.check_output(["check_java"]).decode("utf-8").split()[-1][:-8]
-with open("/hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
+with open("./hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
   envfile.write("export JAVA_HOME="+java_path)
 with open("/etc/hosts","a") as hosts:
   hosts.writelines(["127.0.0.1 node-master"])

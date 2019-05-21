@@ -24,16 +24,11 @@ sudo chmod +x /usr/local/bin/docker-compose ;
 cd PraktikumProcessMining ;
 git checkout integration ;
 
-sudo useradd -p hadoop hadoop
-sudo usermod -aG sudo hadoop
-sudo mkdir /home/hadoop/
-cd /home/hadoop/
-curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o /home/hadoop/hadoop.tar.gz ;
+curl http://mirror.dkd.de/apache/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz -o hadoop.tar.gz ;
 tar -xzf  hadoop.tar.gz ;
 mv hadoop-3.2.0 hadoop ;
 rm hadoop.tar.gz ;
 
 python3 ~/PraktikumProcessMining/integration/src/hadoop.py
-chown -R hadoop:hadoop /home/hadoop/
 /hadoop/bin/hdfs namenode -format
 sudo docker-compose up --build
