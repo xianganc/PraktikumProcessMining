@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+ 
+    <link rel="stylesheet" type="text/css" href="../static/login.css"/>
+    <script type="text/javascript" src="../static/login.js"></script>
+</head>
+ 
+<body>
+<div id="login_frame">
+ 
+    <p id="image_logo"><img src="../static/images/fingerprint.png"></p>
+ 
+    <form method="post" action="login.js">
+ 
+        <p><label class="label_input">Username</label><input type="text" id="username" class="text_field"/></p>
+        <p><label class="label_input">Password</label><input type="password" id="password" class="text_field"/></p>
+ 
+        <div id="login_control">
+            <input type="button" id="btn_login" value="Login" onclick="login();"/>
+            <input type="reset" id="reset" value="Reset" />
+        </div>
+    </form>
+</div>
+ 
+</body>
+</html>
