@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 ENV INITSYSTEM on
 
 
-RUN mkdir \
+RUN mkdir -p \
   /deps \
   /src \
   /run/sshd \
