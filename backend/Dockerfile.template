@@ -9,7 +9,7 @@ RUN mkdir \
   /root/.ssh
 
 COPY ./deps/ /deps/
-COPY ../sshFile/aws_ssh.pub /root/.ssh/authorized_keys
+
 
 RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
 

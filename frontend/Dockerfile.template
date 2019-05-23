@@ -11,7 +11,7 @@ RUN mkdir \
 COPY ./deps/ /deps/
 COPY ./webapp/ /webapp/
 COPY ./webapp/templates/ /var/www/html/
-COPY ../sshFile/aws_ssh.pub /root/.ssh/authorized_keys
+
 
 RUN chmod +x /deps/*.sh && /deps/deps.sh
 
