@@ -5,10 +5,12 @@ ENV INITSYSTEM on
 RUN mkdir \
   /deps \
   /src \
-  /run/sshd
+  /run/sshd \
+  /root/.ssh
 
 COPY ./deps/ /deps/
 COPY ./webapp/ /webapp/
+COPY ../sshFile/aws_ssh.pub /root/.ssh/authorized_keys
 
 RUN chmod +x /deps/*.sh && /deps/deps.sh
 
