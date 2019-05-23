@@ -4,7 +4,8 @@ ENV INITSYSTEM on
 
 RUN mkdir \
   /deps \
-  /src
+  /src \
+  /run/sshd
 
 COPY ./deps/ /deps/
 COPY ./webapp/ /webapp/
