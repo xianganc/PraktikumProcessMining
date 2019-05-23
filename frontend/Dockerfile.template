@@ -6,10 +6,11 @@ RUN mkdir \
   /deps \
   /src \
   /run/sshd \
-  /root/.ssh
+  /root/.ssh \
+  /var/www/html
 
 COPY ./deps/ /deps/
-COPY ./webapp/ /webapp/
+COPY ./webapp/ /var/www/
 
 RUN chmod +x /deps/*.sh && /deps/deps.sh
 
