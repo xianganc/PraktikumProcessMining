@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, url_for, send_from_directory
+from flask import Flask, request, url_for, send_from_directory, flash, render_template
 from werkzeug import secure_filename
 
 ALLOWED_EXTENSIONS = set(['csv', 'xes'])
@@ -12,11 +12,12 @@ app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 html = '''
     <!DOCTYPE html>
     <title>Upload File</title>
-    <h1>Upload your CSV or XES file here please!</h1>
+    <h1>Upload your CSV or XES file here!</h1>
     <form method=post enctype=multipart/form-data>
          <input type=file name=file>
          <input type=submit value=UPLOAD>
     </form>
+    <div id="div2"></div>
     '''
 
 
@@ -39,7 +40,10 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file_url = url_for('uploaded_file', filename=filename)
-            return html + '<br><img src=' + file_url + '>'
+            return html
+            # return html + '<br><img src=' + file_url + '>'
+        else:
+            return render_template('upload.html', 'error')
     return html
 
 
