@@ -10,8 +10,6 @@ RUN mkdir \
 
 COPY ./deps/ /deps/
 COPY ./webapp/ /webapp/
-COPY ./webapp/templates/ /var/www/html/
-
 
 RUN chmod +x /deps/*.sh && /deps/deps.sh
 
