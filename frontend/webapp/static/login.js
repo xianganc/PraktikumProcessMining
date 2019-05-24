@@ -13,8 +13,9 @@ function login() {
 
     } else if(username.value == "admin" && pass.value == "admin"){
 
+        window.location.href="dashboard";
+    } else if(username.value == "admin" && pass.value == "pass"){
         ;
-
     } else {
 
         alert("Please the correct login data!")
