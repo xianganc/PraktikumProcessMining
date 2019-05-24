@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard of Upload and Preview</title>
+    <!-- <style>
+        body {
+            background-color: rgba(240, 255, 255, 0.5);
+        }
+    </style> -->
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <div class='dashboard-header'>
+            <div class='branding'>
+              <a class='' href='#' title='User Menu'>
+                <span class=''>Process Mining Group Hadoop</span>
+              </a>
+            </div>
+        </div>
+    </div>
+    <h2>Dashboard</h2>
+    <div class="div1">
+        Choose your CSV or XES file to upload: 
+        <input type="file" name="" id="file" class="file" onchange="textMess(this.files)">
+        <!-- <button type="submit">Submit</button> -->
+        <br>
+        <hr>
+        <a>Raw data preview:</a>
+        <br>
+        <div id="div2"></div>
+    </div>
+    <style>
+        #div2{
+            border:1px solid black;
+            overflow:auto;
+            height:350px;
+        }
+    </style>
+
+    <script>
+        function textMess(file){
+            var mess = file[0];
+            if(!mess.type.match('\.csv','\.xes')){
+                window.alert("Only CSV or XES file is supported!");
+                return;
+            }
+            var file = new FileReader();
+            file.readAsText(mess);
+            file.onload = function(e){
+                var htmlCode = e.target.result;
+                document.getElementById("div2").innerText = htmlCode;
+            }
+        }
+    </script>
+
+    <button id="submit1" type="submit">Submit</button>
+
+    <style>
+        #submit1{
+            font-size: 14px;
+            font-family: sans-serif;
+            
+            width: 120px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            
+            color: white;
+            background-color: #00001a;
+            border-radius: 6px;
+            border: 0;
+            
+            float: right;
+        }
+    </style>
+</body>
+</html>

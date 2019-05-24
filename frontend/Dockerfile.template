@@ -1,0 +1,19 @@
+FROM ubuntu:18.04
+ENV INITSYSTEM on
+
+
+RUN mkdir -p \
+  /deps \
+  /src \
+  /run/sshd \
+  /root/.ssh \
+  /var/www
+
+COPY ./frontend/deps/ /deps/
+COPY ./frontend/webapp/ /var/www/
+COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
+
+
+RUN chmod +x /deps/*.sh && /deps/deps.sh
+
+CMD /deps/init.sh

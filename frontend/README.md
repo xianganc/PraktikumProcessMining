@@ -1,0 +1,3 @@
+# PraktikumProcessMining
+
+frontend related stuff
