@@ -14,6 +14,10 @@ def index():
 def hello():
 	return render_template('index.html', name = 'Dagen')
 
+@app.route('/dashboard')
+def dashboard():
+	return render_template('dashboard.html', name = "Dagen")
+
 if __name__ == '__main__':
 	app.run(debug = True, port = 8080, host='0.0.0.0')
 
@@ -32,7 +36,7 @@ if __name__ == '__main__':
 # </html>'''
 
 # class IndexHandler(MethodView):
-    	
+
 # 	def __init__(self, name):
 # 		print(name)
 
