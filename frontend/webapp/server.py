@@ -14,8 +14,18 @@ def index():
 def hello():
 	return render_template('index.html', name = 'Dagen')
 
+
+@app.route('/login')
+def login():
+	return render_template('login.html', name = 'Dagen')
+
 @app.route('/dashboard')
 def dashboard():
+	return render_template('dashboard.html', name = "Dagen")
+
+
+@app.route('/templates/dashboard.html')
+def dashboard2():
 	return render_template('dashboard.html', name = "Dagen")
 
 if __name__ == '__main__':
