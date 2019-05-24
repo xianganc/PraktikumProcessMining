@@ -55,4 +55,4 @@ java_path = subprocess.check_output("./integration/bin/check_java").decode("utf-
 with open("./hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
   envfile.write("export JAVA_HOME="+java_path)
 with open("/etc/hosts","a") as hosts:
-  hosts.writelines(["127.0.0.1 node-master"])
+  hosts.writelines(["%s node-master" % ip])
