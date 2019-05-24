@@ -13,7 +13,7 @@ function login() {
 
     } else if(username.value == "admin" && pass.value == "admin"){
 
-        window.location.href="dashboard";
+        ;
 
     } else {
 
