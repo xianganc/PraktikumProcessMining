@@ -17,7 +17,8 @@ sudo apt-get install -y \
   docker-ce-cli \
   containerd.io \
   default-jre \
-  ufw
+  ufw \
+  iproute2
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ;
 sudo chmod +x /usr/local/bin/docker-compose ;
@@ -29,11 +30,15 @@ rm hadoop.tar.gz ;
 
 chmod +x ~/PraktikumProcessMining/integration/bin/*
 chmod +x ~/PraktikumProcessMining/integration/deps/*
-sudo python3 ~/PraktikumProcessMining/integration/src/hadoop.py
+
 cp ~/PraktikumProcessMining/sshFile/aws_ssh ~/.ssh/id_rsa
 sudo chmod 600 ~/.ssh/id_rsa
+
+sudo integration/deps/inject.sh
+
+sudo docker-compose up --build -d
+
+sudo python3 ~/PraktikumProcessMining/integration/src/hadoop.py
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
 hadoop/bin/hdfs dfsadmin -report
-sudo integration/deps/inject.sh
-sudo docker-compose up --build -d
