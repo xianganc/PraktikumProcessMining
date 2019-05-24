@@ -1,0 +1,2 @@
+#!bin/bash
+runuser -l hadoop -c '/hadoop/sbin/start-dfs.sh'
