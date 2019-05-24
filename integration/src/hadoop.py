@@ -1,13 +1,14 @@
 import subprocess
 
-
+ip = subprocess.check_output(["./integration/bin/docker_ip"]).decode('utf-8').split()[-1]
+print(ip)
 #print("There are some setup questions incoming")
 config = """<configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
+        <value>hdfs://%s:9000</value>
     </property>
-</configuration>"""
+</configuration>""" % (ip)
 with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
   configfile.write(config)
 config = """<configuration>
