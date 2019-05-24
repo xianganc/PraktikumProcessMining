@@ -9,8 +9,8 @@ RUN mkdir -p \
   /root/.ssh \
   /var/www
 
-COPY ./deps/ /deps/
-COPY ./webapp/* /var/www/
+COPY ./frontend/deps/ /deps/
+COPY ./frontend/webapp/* /var/www/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 
 
