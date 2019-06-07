@@ -9,6 +9,7 @@ RUN mkdir -p \
   /data
 
 COPY ./backend/deps/ /deps/
+COPY ./backend/app/ /src/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 
 RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
