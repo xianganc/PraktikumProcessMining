@@ -14,7 +14,7 @@ with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
 config = """<configuration>
     <property>
         <name>dfs.replication</name>
-        <value>0</value>
+        <value>1</value>
     </property>
 </configuration>"""
 with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
