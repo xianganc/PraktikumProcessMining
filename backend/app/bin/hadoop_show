@@ -1,0 +1,4 @@
+#!/bin/bash
+
+runuser hadoop -c '/src/hadoop/bin/hdfs -ls -R /'
+
