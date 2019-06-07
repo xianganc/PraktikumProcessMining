@@ -10,7 +10,6 @@ RUN mkdir -p \
 
 COPY ./backend/deps/ /deps/
 COPY ./backend/app/ /src/
-COPY ./hadoop/ /src/
 COPY ./backend/app/bin/ /bin/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 
