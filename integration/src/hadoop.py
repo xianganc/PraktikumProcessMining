@@ -53,4 +53,4 @@ with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
   #configfile.write(config)
 java_path = subprocess.check_output("./integration/bin/check_java").decode("utf-8").split()[-1][:-8]
 subprocess.check_output(["sudo","echo","'export JAVA_HOME='"+java_path,">>","./hadoop/etc/hadoop/hadoop-env.sh"])
-subprocess.check_output(["sudo","echo","' %s node-master \n'" % ip,">>","/etc/hosts"])
+subprocess.check_output(["sudo","runuser","root","echo '%s node-master \n' >> /etc/hosts" % ip])
