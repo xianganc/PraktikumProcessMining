@@ -13,7 +13,6 @@ services:
       - "201:22"
     volumes:
       - data:/data
-    restart: always
 
   frontend:
     build:

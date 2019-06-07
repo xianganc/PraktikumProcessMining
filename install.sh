@@ -35,11 +35,13 @@ chmod +x ~/PraktikumProcessMining/integration/deps/*
 cp ~/PraktikumProcessMining/sshFile/aws_ssh ~/.ssh/id_rsa
 sudo chmod 600 ~/.ssh/id_rsa
 
+/bin/bash -c 'python3 ~/PraktikumProcessMining/integration/src/java_path.py'
+
 sudo integration/deps/inject.sh
 sudo docker-compose up --build -d
 
 /bin/bash -c 'python3 ~/PraktikumProcessMining/integration/src/hadoop.py'
-sudo docker cp ~/PraktikumProcessMining/hadoop praktikumprocessmining_backend_1:/src
+
 
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
