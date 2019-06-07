@@ -39,7 +39,7 @@ sudo integration/deps/inject.sh
 sudo docker-compose up --build -d
 
 /bin/bash -c 'python3 ~/PraktikumProcessMining/integration/src/hadoop.py'
-sudo docker cp ~/PraktikumProcessMining/hadoop praktikumprocessmining_backend_1:/src
+#sudo docker cp ~/PraktikumProcessMining/hadoop praktikumprocessmining_backend_1:/src
 
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
