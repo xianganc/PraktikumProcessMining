@@ -5,7 +5,7 @@ echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 
 useradd hadoop
 
-sleep 35
+sleep 120
 
 python3 /src/src/main.py
 

@@ -43,5 +43,4 @@ sudo docker cp ~/PraktikumProcessMining/hadoop praktikumprocessmining_backend_1:
 
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
-hadoop/bin/hdfs dfs -mkdir -p .
 hadoop/bin/hdfs dfsadmin -report
