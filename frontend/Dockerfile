@@ -7,7 +7,8 @@ RUN mkdir -p \
   /src \
   /run/sshd \
   /root/.ssh \
-  /var/www
+  /var/www \
+  /data
 
 COPY ./frontend/deps/ /deps/
 COPY ./frontend/webapp/ /var/www/

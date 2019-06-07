@@ -13,8 +13,12 @@ with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
   configfile.write(config)
 config = """<configuration>
     <property>
-        <name>dfs.replication</name>
-        <value>1</value>
+      <name>dfs.replication</name>
+      <value>1</value>
+    </property>
+    <property>
+      <name>dfs.permissions.enabled</name>
+      <value>false</value>
     </property>
 </configuration>"""
 with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
@@ -51,8 +55,5 @@ with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
 #  </configuration>"""
 #with open("./hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
   #configfile.write(config)
-java_path = subprocess.check_output("./integration/bin/check_java").decode("utf-8").split()[-1][:-8]
-with open("./hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
-  envfile.write("export JAVA_HOME="+java_path)
-with open("/etc/hosts","a") as hosts:
-  hosts.writelines(["127.0.0.1 node-master"])
+
+subprocess.check_output(["sudo","runuser","root","-c","echo '%s node-master \n' >> /etc/hosts" % ip])

@@ -35,8 +35,8 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>Actions</a>
                     <ul class="sub-menu">
                         <li><a href=""><i class="icon-font">&#xe008;</i>Upload</a></li>
-                        <li><a href=""><i class="icon-font">&#xe005;</i>placeholder1</a></li>
-                        <li><a href=""><i class="icon-font">&#xe006;</i>placeholder2</a></li>
+                        <li><a href=""><i class="icon-font">&#xe005;</i>Result Page</a></li>
+                        <!-- <li><a href=""><i class="icon-font">&#xe006;</i>placeholder2</a></li> -->
                     </ul>
                 </li>
                 <li>
@@ -65,14 +65,17 @@
             <div class="result-content">
                 <ul class="list">
                     <li>
-                        <input type="file" name="" id="file" class="file" onchange="textMess(this.files)">
+                        <form action="/templates/dashboard.html" enctype="multipart/form-data" method="POST">
+                            <input type="file" name="file" id="file" class="file" onchange="textMess(this.files)">
+                            <input type="submit" value="Submit">
+                        </form>
                     </li>
                     <br>
                     Raw data preview:
                 </ul>
                 <div id="div2"></div>
                 <br>
-                <button id="submit1" type="submit">Submit</button>
+                <!-- <button id="submit1" type="submit">Submit</button> -->
                 <br><br>
             </div>
         </div>

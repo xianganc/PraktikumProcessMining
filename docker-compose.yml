@@ -1,17 +1,23 @@
 version: '2.1'
 
+volumes:
+  data:
+
 services:
   backend:
     build:
       context: '.'
-      dockerfile: './backend/Dockerfile.template'
+      dockerfile: './backend/Dockerfile'
     privileged: 'true'
     ports:
       - "201:22"
+    volumes:
+      - data:/data
+
   frontend:
     build:
       context: '.'
-      dockerfile: './frontend/Dockerfile.template'
+      dockerfile: './frontend/Dockerfile'
     privileged: 'true'
     ports:
       - "80:8080"
@@ -19,3 +25,6 @@ services:
       - "5000:5000"
       - "8080:8080"
       - "202:22"
+    volumes:
+      - data:/data
+    restart: always

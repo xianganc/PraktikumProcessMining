@@ -5,7 +5,7 @@ from werkzeug import secure_filename
 ALLOWED_EXTENSIONS = set(['csv', 'xes'])
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = os.getcwd()
+app.config['UPLOAD_FOLDER'] = "/data/"
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
 
