@@ -7,18 +7,18 @@ class HadoopInteractions:
 
   def pushData(self,from_,to_):
     """ pushing data into hadoop """
-    subprocess.check_output(["runuser","hadoop","-c" ,'/src/hadoop/bin/hdfs dfs -mkdir '+ to_])
-    subprocess.check_output(["runuser","hadoop","-c" ,'/src/hadoop/bin/hdfs dsf -put '+from_ + ' '+ to_])
+    subprocess.check_output(["runuser","ubuntu","-c" ,'/src/hadoop/bin/hdfs dfs -mkdir -p '+ to_])
+    subprocess.check_output(["runuser","ubuntu","-c" ,'/src/hadoop/bin/hdfs dfs -put '+from_ + ' '+ to_])
     pass
 
   def getData(self, from_, to_):
     """ get data from hadoop """
-    subprocess.check_output(["runuser","hadoop","-c" ,'/src/hadoop/bin/hdfs dfs -get '+ from_ + ' '+ to_])
+    subprocess.check_output(["runuser","ubuntu","-c" ,'/src/hadoop/bin/hdfs dfs -get '+ from_ + ' '+ to_])
     pass
 
   def showData(self,from_):
     """ get data from hadoop """
-    subprocess.check_output(["runuser","hadoop","-c" ,'/src/hadoop/bin/hdfs dfs -ls -R '+ from_])
+    subprocess.check_output(["ssh","ubuntu@prak.hashtagm.de",'"/src/hadoop/bin/hdfs dfs -ls -R %s"' % from_])
     pass
 
   def runMR(self, data):
