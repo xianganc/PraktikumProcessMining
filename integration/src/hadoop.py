@@ -52,7 +52,5 @@ with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
 #with open("./hadoop/etc/hadoop/yarn-site.xml","w") as configfile:
   #configfile.write(config)
 java_path = subprocess.check_output("./integration/bin/check_java").decode("utf-8").split()[-1][:-8]
-with open("./hadoop/etc/hadoop/hadoop-env.sh","a") as envfile:
-  envfile.write("export JAVA_HOME="+java_path)
-with open("/etc/hosts","a") as hosts:
-  hosts.writelines(["%s node-master \n" % ip])
+subprocess.check_output(["sudo","echo","'export JAVA_HOME='"+java_path,">>","./hadoop/etc/hadoop/hadoop-env.sh"])
+subprocess.check_output(["sudo","echo","' %s node-master \n'" % ip,">>","/etc/hosts"])
