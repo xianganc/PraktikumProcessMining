@@ -14,6 +14,10 @@ class HadoopInteractions:
     """ get data from hadoop """
     pass
 
+  def showData(self,from_):
+    """ get data from hadoop """
+    pass
+
   def runMR(self, data):
     """ running the Map-Reduce Job """
     pass
