@@ -13,6 +13,7 @@ services:
       - "201:22"
     volume:
       - data:/data
+    restart: always
 
   frontend:
     build:
@@ -27,3 +28,4 @@ services:
       - "202:22"
     volume:
       - data:/data
+    restart: always
