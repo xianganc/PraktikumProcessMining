@@ -6,6 +6,4 @@ echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 
 python3 /var/www/server.py
 
-while true; do
-  sleep 1
-done
+echo "LEFT PYTHON SCRIPT! RESTARTING"
