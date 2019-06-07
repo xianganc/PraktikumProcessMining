@@ -13,8 +13,12 @@ with open("./hadoop/etc/hadoop/core-site.xml","w") as configfile:
   configfile.write(config)
 config = """<configuration>
     <property>
-        <name>dfs.replication</name>
-        <value>1</value>
+      <name>dfs.replication</name>
+      <value>1</value>
+    </property>
+    <property>
+      <name>dfs.permissions.enabled</name>
+      <value>true</value>
     </property>
 </configuration>"""
 with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
