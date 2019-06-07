@@ -1,6 +1,6 @@
 version: '2.1'
 
-volume:
+volumes:
   data:
 
 services:
@@ -11,7 +11,7 @@ services:
     privileged: 'true'
     ports:
       - "201:22"
-    volume:
+    volumes:
       - data:/data
     restart: always
 
@@ -26,6 +26,6 @@ services:
       - "5000:5000"
       - "8080:8080"
       - "202:22"
-    volume:
+    volumes:
       - data:/data
     restart: always
