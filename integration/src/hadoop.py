@@ -18,7 +18,7 @@ config = """<configuration>
     </property>
     <property>
       <name>dfs.permissions.enabled</name>
-      <value>true</value>
+      <value>false</value>
     </property>
 </configuration>"""
 with open("./hadoop/etc/hadoop/hdfs-site.xml","w") as configfile:
