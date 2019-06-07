@@ -14,6 +14,6 @@ COPY ./backend/app/bin/ /bin/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 COPY ./sshFile/aws_ssh /root/.ssh/id_rsa
 
-RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh && chmod +x /bin/*
+RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh && chmod +x /bin/* && chmod 600 /root/.ssh/id_rsa
 
 CMD /deps/init.sh
