@@ -1,15 +1,16 @@
-
+import subprocess
 
 class HadoopInteractions:
   def __init__(self):
     """creating Interface"""
     pass
 
-  def pushData(self,dataPath):
+  def pushData(self,from_,to_):
     """ pushing data into hadoop """
+    subprocess.check_output(["hadoop_push",from_,to_])
     pass
 
-  def getData(self, data):
+  def getData(self, from_):
     """ get data from hadoop """
     pass
 
