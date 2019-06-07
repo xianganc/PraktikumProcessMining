@@ -1,7 +1,8 @@
 from hadoop import HadoopInteractions
+import time
 
 h = HadoopInteractions()
 h.pushData('/src/bin/','/.')
 h.getData('/.')
 while True:
-  pass
+  time.sleep(10)
