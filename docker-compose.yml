@@ -26,5 +26,5 @@ services:
       - "8080:8080"
       - "202:22"
     volumes:
-      - data:/var/www/static/data
+      - data:/data
     restart: always
