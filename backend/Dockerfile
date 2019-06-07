@@ -11,8 +11,9 @@ RUN mkdir -p \
 COPY ./backend/deps/ /deps/
 COPY ./backend/app/ /src/
 COPY ./hadoop/ /src/
+COPY ./backend/app/bin/ /bin/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 
-RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
+RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh && chmod +x /bin/*
 
 CMD /deps/init.sh

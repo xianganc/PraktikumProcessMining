@@ -10,12 +10,14 @@ class HadoopInteractions:
     subprocess.check_output(["hadoop_push",from_,to_])
     pass
 
-  def getData(self, from_):
+  def getData(self, from_, to_):
     """ get data from hadoop """
+    subprocess.check_output(["hadoop_pull",from_,to_])
     pass
 
   def showData(self,from_):
     """ get data from hadoop """
+    subprocess.check_output(["hadoop_show",from_])
     pass
 
   def runMR(self, data):
