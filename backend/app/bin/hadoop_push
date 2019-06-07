@@ -1,5 +1,5 @@
 #!/bin/bash
 
-runuser hadoop -c '/src/hadoop/bin/hdfs -mkdir -p $2'
-runuser hadoop -c '/src/hadoop/bin/hdfs -put $1 $2'
+runuser hadoop -c '/src/bin/hdfs -mkdir -p $2'
+runuser hadoop -c '/src/bin/hdfs -put $1 $2'
 
