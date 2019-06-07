@@ -41,4 +41,5 @@ sudo docker-compose up --build -d
 sudo python3 ~/PraktikumProcessMining/integration/src/hadoop.py
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
+hadoop/bin/hdfs dfs -mkdir -p .
 hadoop/bin/hdfs dfsadmin -report
