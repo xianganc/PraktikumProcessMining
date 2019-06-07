@@ -5,7 +5,8 @@ RUN mkdir -p \
   /deps \
   /src \
   /run/sshd \
-  /root/.ssh
+  /root/.ssh \
+  /data
 
 COPY ./backend/deps/ /deps/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
