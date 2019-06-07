@@ -1,4 +1,0 @@
-#!/bin/bash
-
-runuser hadoop -c '/src/bin/hdfs -ls -R $1'
-

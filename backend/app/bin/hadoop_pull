@@ -1,3 +1,0 @@
-#!/bin/bash
-
-runuser hadoop -c '/src/bin/hdfs dfs -get $1 $2'
