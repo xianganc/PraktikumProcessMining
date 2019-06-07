@@ -1,8 +1,14 @@
 from hadoop import HadoopInteractions
 import time
+import os
 
 h = HadoopInteractions()
 h.pushData('/src/bin/','/hadoop')
 h.showData('/')
 while True:
-  time.sleep(10)
+  for (dirpath, dirnames, filenames) in os.walk("/data"):
+    for element in filenames:
+      h.pushData(os.sep.join([dirpath,filenames]),"/hadoop"+dirpath)
+    for element in dirnames:
+      h.pushData(os.sep.join([dirpath,dirnames]),"/hadoop"+dirpath)
+  time.sleep(60)
