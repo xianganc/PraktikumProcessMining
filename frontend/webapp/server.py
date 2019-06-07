@@ -36,7 +36,7 @@ def upload():
 	if request.method == 'POST':
 		f = request.files['file']
 		basepath = os.path.dirname(__file__)
-		upload_path = os.path.join(basepath, 'static/uploads', secure_filename(f.filename))
+		upload_path = os.path.join(basepath, '../../data', secure_filename(f.filename))
 		f.save(upload_path)
 		return redirect(url_for('upload'))
 	return render_template('dashboard.html')
