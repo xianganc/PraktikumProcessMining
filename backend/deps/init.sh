@@ -5,11 +5,9 @@ echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 
 useradd hadoop
 
+sleep 35
+
 python3 /src/src/main.py
 
 echo "LEFT PYTHON SCRIPT! RESTARTING"
 
-while :
-do
-  sleep 60
-done
