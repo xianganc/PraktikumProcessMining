@@ -8,3 +8,8 @@ useradd hadoop
 python3 /src/src/main.py
 
 echo "LEFT PYTHON SCRIPT! RESTARTING"
+
+while :
+do
+  sleep 60
+done
