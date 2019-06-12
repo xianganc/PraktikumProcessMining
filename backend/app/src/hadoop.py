@@ -9,6 +9,7 @@ class HadoopInteractions:
     """ pushing data into hadoop """
     subprocess.check_output(["/src/bin/hdfs","dfs","-mkdir","-p",to_])
     subprocess.check_output(["/src/bin/hdfs","dfs","-put",from_,to_])
+    subprocess.check_output(["rm", "-f",from_])
     pass
 
   def getData(self, from_, to_):
