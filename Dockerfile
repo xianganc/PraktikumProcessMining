@@ -6,6 +6,7 @@ RUN apt-get install -y \
   python3.6 \
   python3-pip \
   openssh-server \
-  default-jre
+  default-jre \
+  curl
 
 RUN pip3 install pm4py flask opyenxes
