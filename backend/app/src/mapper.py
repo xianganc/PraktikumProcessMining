@@ -8,3 +8,4 @@ class Mapper:
     pass
   def mapCsv(self):
     pass
+
