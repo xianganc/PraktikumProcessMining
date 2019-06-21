@@ -20,12 +20,13 @@ def showApi():
 
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
-  had.runMR('{}')
+  if request.method == 'GET':
+    return render_template('mr.html', name = 'Dagen')
+  header = request.form['header']
   return False
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
 def runAlpha():
-  had.runAlpha('{}')
   return False
 
 if __name__ == '__main__':

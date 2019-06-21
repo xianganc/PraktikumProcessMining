@@ -21,12 +21,3 @@ class HadoopInteractions:
     """ get data from hadoop """
     subprocess.check_output(["/src/bin/hdfs", "dfs", "-ls", "-R", from_])
     pass
-
-  def runMR(self, data):
-    """ running the Map-Reduce Job """
-    pass
-
-  def runAlpha(self, data):
-    """ running the alpha-algorithm """
-    pass
-
