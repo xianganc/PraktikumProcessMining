@@ -30,6 +30,8 @@ def createMR(dataList):
     <form action="/api/mr" method="post">
       <p>Header:</p>
       <input type="text" name="header">
+      <p>Event:</p>
+      <input type="text" name="event">
       <p>File:</p>
       <input type="text" name="files">
       <input type="submit">
