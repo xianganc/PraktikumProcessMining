@@ -1,9 +1,15 @@
 import subprocess
+import os
 
 class HadoopInteractions:
   def __init__(self):
     """creating Interface"""
     pass
+
+  def data(self):
+    """ """
+    for (dirpath, dirnames, filenames) in os.walk('/data'):
+      self.pushData(os.path.join(dirpath+filenames),'/')
 
   def pushData(self,from_,to_):
     """ pushing data into hadoop """

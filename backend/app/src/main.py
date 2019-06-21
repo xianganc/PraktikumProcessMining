@@ -48,6 +48,7 @@ def showApi():
 
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
+  had.data()
   if request.method == 'GET':
     out = had.showData('/')
     createMR(out)
