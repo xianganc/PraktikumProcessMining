@@ -38,6 +38,34 @@ def createMR(dataList):
     </html>
     """)
 
+def createAlpha(dataList):
+  with open('/src/src/templates/alpha.html','w') as outfile:
+    outfile.write("""
+    <html>
+    <body>
+    <p> files </p>
+    <table>
+    """)
+    for entry in dataList:
+      outfile.write("<tr>")
+      outfile.write("<td>"+entry+"</td>")
+      outfile.write("</tr>")
+    outfile.write("""
+    </table>
+    <p>
+      Please enter the key, by which you wish to map the selected file
+    </p>
+    <form action="/api/mr" method="post">
+      <p>Header:</p>
+      <input type="text" name="header">
+      <p>File:</p>
+      <input type="text" name="files">
+      <input type="submit">
+    </form>
+    </body>
+    </html>
+    """)
+
 @app.route('/')
 def index():
 	return render_template('unauthorized.html', name = 'Dagen')
@@ -64,6 +92,18 @@ def runMr():
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
 def runAlpha():
+  had.data()
+  if request.method == 'GET':
+    out = had.showData('/')
+    createAlpha(out)
+    return render_template('alpha.html', name = 'Dagen')
+  header = request.form['header']
+  files = request.form['files']
+  mp = Mapper()
+  if files[-3] == 'csv':
+    ma = mp.mapCsv(files,header)
+  elif files[-3] == 'xes':
+    ma = mp.mapXes(files,header)
   return render_template('alpha.html', name = 'Dagen')
 
 if __name__ == '__main__':
