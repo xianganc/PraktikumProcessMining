@@ -22,5 +22,5 @@ class HadoopInteractions:
     out = subprocess.check_output(["/src/bin/hdfs", "dfs", "-ls", "-R", "/home"+from_])
     res = []
     for line in out:
-      res.append(line)
+      res.append(line.split()[-1])
     return res
