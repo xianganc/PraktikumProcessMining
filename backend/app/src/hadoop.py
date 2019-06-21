@@ -14,14 +14,13 @@ class HadoopInteractions:
 
   def getData(self, from_, to_):
     """ get data from hadoop """
-    subprocess.check_output(["/src/bin/hdfs", "dfs", "-get", from_,"/home"+to_])
+    subprocess.check_outpu t(["/src/bin/hdfs", "dfs", "-get", from_,"/home"+to_])
     pass
 
   def showData(self,from_):
     """ get data from hadoop """
     out = subprocess.check_output(["/src/bin/hdfs", "dfs", "-ls", "-R", "/home"+from_])
-    print("SHOW DATA FOR STUFF "+out)
     res = []
-    for line in out:
+    for line in out.decode('utf-8'):
       res.append(line.split()[-1])
     return res
