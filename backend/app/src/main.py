@@ -91,7 +91,7 @@ def runMr():
     ma = mp.mapCsv(files,header)
   elif files[-3] == 'xes':
     ma = mp.mapXes(files,header)
-  with open("/src/src/templates/res.html") as out:
+  with open("/src/src/templates/res.html",'w') as out:
     out.write("""<html>
     <body>
     <table>""")
