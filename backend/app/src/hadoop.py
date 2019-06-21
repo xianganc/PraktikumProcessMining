@@ -14,7 +14,7 @@ class HadoopInteractions:
 
   def getData(self, from_, to_):
     """ get data from hadoop """
-    subprocess.check_outpu t(["/src/bin/hdfs", "dfs", "-get", from_,"/home"+to_])
+    subprocess.check_output(["/src/bin/hdfs", "dfs", "-get", from_,"/home"+to_])
     pass
 
   def showData(self,from_):
