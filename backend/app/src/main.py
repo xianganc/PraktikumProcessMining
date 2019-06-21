@@ -1,4 +1,6 @@
 from hadoop import HadoopInteractions
+from reducer import Reduce
+from mapper import Mapper
 from flask import Flask, render_template, request, redirect, url_for
 from flask.views import MethodView
 from werkzeug.utils import secure_filename
@@ -14,7 +16,7 @@ def index():
 
 @app.route('/api')
 def showApi():
-  return render_template('unauthorized.html', name = 'Dagen')
+  return render_template('api.html', name = 'Dagen')
 
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
