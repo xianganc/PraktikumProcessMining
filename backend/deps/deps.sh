@@ -6,4 +6,4 @@ apt-get install -y \
   openssh-server \
   default-jre \
 
-pip3 install pm4py
+pip3 install pm4py flask

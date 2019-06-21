@@ -11,6 +11,7 @@ services:
     privileged: 'true'
     ports:
       - "201:22"
+      - "3210:3210"
     volumes:
       - data:/data
 
