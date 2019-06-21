@@ -1,5 +1,5 @@
 import csv
-import xes
+import opyenxes
 
 class Mapper:
   def __init__(self, fileExtention, key):
