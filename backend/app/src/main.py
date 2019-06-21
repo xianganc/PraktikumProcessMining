@@ -88,7 +88,19 @@ def runMr():
     ma = mp.mapCsv(files,header)
   elif files[-3] == 'xes':
     ma = mp.mapXes(files,header)
-  return render_template('mr.html', name = 'Dagen')
+  with open("/src/src/templates/res.html") as out:
+    out.write("""<html>
+    <body>
+    <table>""")
+    for entry in ma:
+      out.write("<tr>")
+      out.write("<td>"+entry+"</td>")
+      out.write("</tr>")
+    out.write("""</table>
+    </body>
+    </html>
+    """)
+  return render_template('res.html', name = 'Dagen')
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
 def runAlpha():
