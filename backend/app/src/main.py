@@ -10,11 +10,11 @@ had = HadoopInteractions()
 
 @app.route('/')
 def index():
-	return render_template('unautorized.html', name = 'Dagen')
+	return render_template('unauthorized.html', name = 'Dagen')
 
 @app.route('/api')
 def showApi():
-  return render_template('unautorized.html', name = 'Dagen')
+  return render_template('unauthorized.html', name = 'Dagen')
 
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
