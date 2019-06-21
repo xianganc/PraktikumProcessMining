@@ -2,7 +2,7 @@ import csv
 from opyenxes.data_in.XUniversalParser import XUniversalParser
 
 class Mapper:
-  def __init__(self, fileExtention, key):
+  def __init__(self):
     pass
   def mapXes(self, lfile, header):
     with open(lfile) as log_file:
