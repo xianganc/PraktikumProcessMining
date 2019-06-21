@@ -21,6 +21,7 @@ class HadoopInteractions:
     """ get data from hadoop """
     out = subprocess.check_output(["/src/bin/hdfs", "dfs", "-ls", "-R", "/home"+from_])
     res = []
-    for line in out.decode('utf-8'):
+    out = out.decode('utf-8')
+    for line in out:
       res.append(line.split()[-1])
     return res
