@@ -49,3 +49,4 @@ sudo docker-compose up --build -d
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
 hadoop/bin/hdfs dfsadmin -report
+hadoop/bin/hdfs dfs -mkdir -p /home
