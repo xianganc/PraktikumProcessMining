@@ -20,4 +20,7 @@ class HadoopInteractions:
   def showData(self,from_):
     """ get data from hadoop """
     out = subprocess.check_output(["/src/bin/hdfs", "dfs", "-ls", "-R", from_])
-    return out
+    res = []
+    for line in out:
+      res.append(line)
+    return res

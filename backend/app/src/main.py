@@ -46,8 +46,8 @@ def showApi():
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
   if request.method == 'GET':
-    had.showData('/')
-    createMR([])
+    out = had.showData('/')
+    createMR(out)
     return render_template('mr.html', name = 'Dagen')
   header = request.form['header']
   createMR(list(header))
