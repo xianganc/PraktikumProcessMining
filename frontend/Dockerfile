@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM processmining:latest
 ENV INITSYSTEM on
 
 
