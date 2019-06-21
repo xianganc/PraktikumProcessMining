@@ -58,6 +58,8 @@ def createAlpha(dataList):
     <form action="/api/mr" method="post">
       <p>Header:</p>
       <input type="text" name="header">
+      <p>Event:</p>
+      <input type="text" name="event">
       <p>File:</p>
       <input type="text" name="files">
       <input type="submit">
@@ -83,6 +85,7 @@ def runMr():
     return render_template('mr.html', name = 'Dagen')
   header = request.form['header']
   files = request.form['files']
+  event = request.form['event']
   mp = Mapper()
   if files[-3] == 'csv':
     ma = mp.mapCsv(files,header)
