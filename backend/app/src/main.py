@@ -57,9 +57,9 @@ def runMr():
   files = request.form['files']
   mp = Mapper()
   if files[-3] == 'csv':
-    createMR(mp.mapCsv(files,header))
+    ma = mp.mapCsv(files,header)
   elif files[-3] == 'xes':
-    createMR(mp.mapXes(files,header))
+    ma = mp.mapXes(files,header)
   return render_template('mr.html', name = 'Dagen')
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
