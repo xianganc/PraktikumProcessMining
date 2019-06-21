@@ -50,3 +50,4 @@ hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
 hadoop/bin/hdfs dfsadmin -report
 hadoop/bin/hdfs dfs -mkdir -p /home
+hadoop/bin/hdfs dfs -put data/annual2017.csv /home/annual2017.csv
