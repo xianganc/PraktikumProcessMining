@@ -8,4 +8,4 @@ RUN apt-get install -y \
   openssh-server \
   default-jre
 
-RUN pip3 install pm4py flask xes
+RUN pip3 install pm4py flask opyenxes
