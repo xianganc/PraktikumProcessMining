@@ -26,10 +26,14 @@ def login():
 def dashboard():
 	return render_template('dashboard.html', name = "Dagen")
 
+@app.route('/result')
+def result():
+	return render_template('result.html', name = "Dagen")
 
-@app.route('/templates/dashboard.html')
-def dashboard2():
-	return render_template('dashboard.html', name = "Dagen")
+# @app.route('/templates/dashboard.html')
+# def dashboard2():
+#     	return render_template('dashboard.html', name = "Dagen")
+
 
 @app.route('/templates/dashboard.html', methods = ['POST', 'GET'])
 def upload():
@@ -40,6 +44,21 @@ def upload():
 		f.save(upload_path)
 		return redirect(url_for('upload'))
 	return render_template('dashboard.html')
+
+
+def return_img_stream(img_local_path):
+    import base64
+    img_stream = ''
+    with open(img_local_path, 'r') as img_f:
+        img_stream = img_f.read()
+        img_stream = base64.b64encode(img_stream)
+    return img_stream
+
+@app.route('/result')
+def show():
+    img_path = 'static/outputs/59f627fd6990c.png'
+    img_stream = return_img_stream(img_path)
+    return render_template('result.html',img_stream=img_stream)
 
 if __name__ == '__main__':
 	app.run(debug = True, port = 8080, host='0.0.0.0')
