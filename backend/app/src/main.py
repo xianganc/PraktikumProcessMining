@@ -10,6 +10,31 @@ import os
 app = Flask(__name__)
 had = HadoopInteractions()
 
+def createMR(dataList):
+  with open('/src/src/templates/mr.html','w') as outfile:
+    outfile.write("""
+    <html>
+    <body>
+    <p> files </p>
+    <table>
+    """)
+    for entry in dataList:
+      outfile.write("<tr>")
+      outfile.write("<td>"+entry+"</td>")
+      outfile.write("</tr>")
+    outfile.write("""
+    </table>
+    <p>
+      Please enter the key, by which you wish to map the selected file
+    </p>
+    <form action="/api/mr" method="post">
+      <input type="text" name="header">
+      <input type="submit">
+    </form>
+    </body>
+    </html>
+    """)
+
 @app.route('/')
 def index():
 	return render_template('unauthorized.html', name = 'Dagen')
@@ -21,8 +46,11 @@ def showApi():
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
   if request.method == 'GET':
+    had.showData('/')
+    createMR([])
     return render_template('mr.html', name = 'Dagen')
   header = request.form['header']
+  createMR(list(header))
   return render_template('mr.html', name = 'Dagen')
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
