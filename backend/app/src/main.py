@@ -23,11 +23,11 @@ def runMr():
   if request.method == 'GET':
     return render_template('mr.html', name = 'Dagen')
   header = request.form['header']
-  return False
+  return render_template('mr.html', name = 'Dagen')
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
 def runAlpha():
-  return False
+  return render_template('alpha.html', name = 'Dagen')
 
 if __name__ == '__main__':
 	app.run(debug = True, port = 3000, host='0.0.0.0')
