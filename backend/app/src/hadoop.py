@@ -9,7 +9,7 @@ class HadoopInteractions:
   def data(self):
     """ """
     for (dirpath, dirnames, filenames) in os.walk('/data'):
-      self.pushData(os.path.join(dirpath+filenames),'/')
+      self.pushData(os.path.join(dirpath,filenames),'/')
 
   def pushData(self,from_,to_):
     """ pushing data into hadoop """
