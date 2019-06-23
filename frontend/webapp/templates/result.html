@@ -34,8 +34,8 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>Actions</a>
                     <ul class="sub-menu">
-                        <li><a href=""><i class="icon-font">&#xe008;</i>Upload</a></li>
-                        <li><a href="/result"><i class="icon-font">&#xe005;</i>Result Page</a></li>
+                        <li><a href="/dashboard"><i class="icon-font">&#xe008;</i>Upload</a></li>
+                        <li><a href=""><i class="icon-font">&#xe005;</i>Result Page</a></li>
                         <!-- <li><a href=""><i class="icon-font">&#xe006;</i>placeholder2</a></li> -->
                     </ul>
                 </li>
@@ -60,20 +60,21 @@
         </div>
         <div class="result-wrap">
             <div class="result-title">
-                <h1>Upload your CSV or XES file here:</h1>
+                <h1>Output:</h1>
             </div>
             <div class="result-content">
                 <ul class="list">
-                    <li>
+                    <!-- <li>
                         <form action="/templates/dashboard.html" enctype="multipart/form-data" method="POST">
                             <input type="file" name="file" id="file" class="file" onchange="textMess(this.files)">
                             <input type="submit" value="Submit">
                         </form>
-                    </li>
-                    <br>
-                    Raw data preview:
+                    </li> -->
+                    <!-- Raw data preview: -->
                 </ul>
-                <div id="div2"></div>
+                <img src="static/outputs/59f627fd6990c.png" />
+                <!-- <img style="width:180px" src="data:;base64,{{ img_stream }}"> -->
+                <!-- <div id="div2"></div> -->
                 <br>
                 <!-- <button id="submit1" type="submit">Submit</button> -->
                 <br><br>
@@ -82,7 +83,7 @@
     </div>
     <!--/main-->
 </div>
-<script>
+<!-- <script>
     function textMess(file){
         var mess = file[0];
         if(!mess.type.match('\.csv','\.xes')){
@@ -97,6 +98,6 @@
             document.getElementById("div2").innerText = htmlCode;
         }
     }
-</script>
+</script> -->
 </body>
 </html>
