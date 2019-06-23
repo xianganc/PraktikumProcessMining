@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM processmining:latest
 ENV INITSYSTEM on
 
 RUN mkdir -p \
@@ -14,6 +14,6 @@ COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 COPY ./sshFile/aws_ssh /root/.ssh/id_rsa
 COPY ./hadoop/ /src/
 
-RUN chmod +x /deps/deps.sh && /deps/deps.sh && chmod +x /deps/init.sh
+RUN chmod +x /deps/deps.sh && chmod +x /deps/init.sh
 
 CMD /deps/init.sh

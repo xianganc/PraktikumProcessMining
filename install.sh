@@ -38,6 +38,9 @@ sudo chmod 600 ~/.ssh/id_rsa
 /bin/bash -c 'python3 ~/PraktikumProcessMining/integration/src/java_path.py'
 
 sudo integration/deps/inject.sh
+
+sudo docker build --tag processmining .
+
 sudo docker-compose up --build -d
 
 /bin/bash -c 'python3 ~/PraktikumProcessMining/integration/src/hadoop.py'
@@ -46,3 +49,5 @@ sudo docker-compose up --build -d
 hadoop/bin/hdfs namenode -format
 hadoop/sbin/start-dfs.sh
 hadoop/bin/hdfs dfsadmin -report
+hadoop/bin/hdfs dfs -mkdir -p /home
+hadoop/bin/hdfs dfs -put data/annual2017.csv /home/annual2017.csv

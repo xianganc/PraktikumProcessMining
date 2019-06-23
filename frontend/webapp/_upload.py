@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, url_for, send_from_directory, flash, render_template
 from werkzeug import secure_filename
 
-ALLOWED_EXTENSIONS = set(['csv', 'xes'])
+ALLOWED_EXTENSIONS = set(['csv', 'xes','CSV','XES'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "/data/"

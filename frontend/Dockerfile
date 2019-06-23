@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM processmining:latest
 ENV INITSYSTEM on
 
 
@@ -15,6 +15,6 @@ COPY ./frontend/webapp/ /var/www/
 COPY ./sshFile/authorized_keys /root/.ssh/authorized_keys
 
 
-RUN chmod +x /deps/*.sh && /deps/deps.sh
+RUN chmod +x /deps/*.sh
 
 CMD /deps/init.sh
