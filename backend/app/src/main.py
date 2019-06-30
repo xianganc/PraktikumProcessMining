@@ -78,6 +78,12 @@ def index():
 def showApi():
   return render_template('api.html', name = 'Dagen')
 
+@app.route('/api/upload')
+def up():
+  for (dirpath, dirnames, filename) in os.walk('/data'):
+    had.pushData(os.path.join(dirpath,filename),filename)
+
+
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
   had.data()

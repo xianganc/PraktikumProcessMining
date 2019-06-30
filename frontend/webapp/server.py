@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask.views import MethodView
 from werkzeug.utils import secure_filename
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -42,6 +43,7 @@ def upload():
 		basepath = os.path.dirname(__file__)
 		upload_path = os.path.join(basepath, '../../data', secure_filename(f.filename))
 		f.save(upload_path)
+		subprocess.check_output(['curl','-s','172.18.0.1:3000/api/upload'])
 		return redirect(url_for('upload'))
 	return render_template('dashboard.html')
 
