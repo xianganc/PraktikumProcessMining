@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask.views import MethodView
 from werkzeug.utils import secure_filename
+import requests
 import os
 import shutil
 import subprocess
@@ -60,7 +61,7 @@ def return_img_stream(img_local_path):
 
 @app.route('/result')
 def show():
-	subprocess.call(['curl', "-XPOST",'-s', '172.18.0.1:3000/api/alpha'])
+	r = requests.get("172.18.0.1:3000/api/alpha")
 	print("show alpha")
 	shutil.move("/data/output.png","/var/www/static/outputs/output.png")
 	img_path = 'static/outputs/output.png'
