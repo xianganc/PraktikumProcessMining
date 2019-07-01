@@ -81,10 +81,11 @@ def showApi():
 
 @app.route('/api/upload')
 def up():
-  for (dirpath, dirnames, filename) in os.walk('/data'):
-    if os.path.splitext(filename)[1] in ['.png']:
-      continue
-    had.pushData(os.path.join(dirpath,filename),filename)
+  for (dirpath, dirnames, filenames) in os.walk('/data'):
+    for filename in filenames:
+      if os.path.splitext(filename)[1] in ['.png']:
+        continue
+      had.pushData(os.path.join(dirpath,filename),filename)
 
 
 @app.route('/api/mr', methods = ['POST', 'GET'])
