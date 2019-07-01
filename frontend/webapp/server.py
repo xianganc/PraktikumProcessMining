@@ -59,6 +59,7 @@ def return_img_stream(img_local_path):
 @app.route('/result')
 def show():
 	subprocess.check_output(['curl', '-s', '172.18.0.1:3000/api/alpha'])
+	print("show alpha")
 	img_path = '../../data/output.png'
 	img_stream = return_img_stream(img_path)
 	return render_template('result.html',img_stream=img_stream)
