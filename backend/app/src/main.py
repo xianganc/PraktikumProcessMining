@@ -119,7 +119,7 @@ def runMr():
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
 def runAlpha():
-  had.getData('example.xes','/tmp/input/example.xes')
+  had.getData('example.xes','/tmp/input/')
   os.system("alphaAlgo.py")
   return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
