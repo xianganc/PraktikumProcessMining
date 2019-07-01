@@ -61,7 +61,8 @@ def show():
 	p = subprocess.Popen(['curl', '-s', '172.18.0.1:3000/api/alpha'])
 	print("show alpha")
 	p.wait()
-	img_path = '../../../data/output.png'
+
+	img_path = os.path.join(os.path.dirname(__file__), '../../data/output.png')
 	img_stream = return_img_stream(img_path)
 	return render_template('result.html',img_stream=img_stream)
 
