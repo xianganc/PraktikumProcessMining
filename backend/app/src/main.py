@@ -117,7 +117,7 @@ def runMr():
     """)
   return render_template('res.html', name = 'Dagen')
 
-@app.route('/api/alpha', methods = ['POST', 'GET'])
+@app.route('/api/alpha')
 def runAlpha():
   had.getData('data/example.xes','/tmp/input/')
   os.system("python3 /src/src/alphaAlgo.py")
