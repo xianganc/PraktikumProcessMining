@@ -58,7 +58,7 @@ def return_img_stream(img_local_path):
 
 @app.route('/result')
 def show():
-    img_path = '../../output.png'
+    img_path = '../../data/output.png'
     img_stream = return_img_stream(img_path)
     return render_template('result.html',img_stream=img_stream)
 
