@@ -63,8 +63,8 @@ def show():
 	print("show alpha")
 	time.sleep(1)
 	p.wait()
-	os.rename("/data/output.png","static/output/output.png")
-	img_path = 'static/output/output.png'
+	os.rename("/data/output.png","static/outputs/output.png")
+	img_path = 'static/outputs/output.png'
 	img_stream = return_img_stream(img_path)
 	return render_template('result.html',img_stream=img_stream)
 
