@@ -6,3 +6,4 @@ log = xes_importer.import_log('/tmp/input/example.xes')
 net, initial_marking, final_marking = alpha_miner.apply(log)
 gviz = vis_factory.apply(net, initial_marking, final_marking)
 vis_factory.save(gviz,'/data/output.png')
+
