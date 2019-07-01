@@ -85,7 +85,7 @@ def up():
     for filename in filenames:
       if os.path.splitext(filename)[1] in ['.png']:
         continue
-      had.pushData(os.path.join(dirpath,filename),filename)
+      had.pushData(os.path.join(dirpath,filename),'/'+filename)
 
 
 @app.route('/api/mr', methods = ['POST', 'GET'])
