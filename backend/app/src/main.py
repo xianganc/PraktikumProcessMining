@@ -6,6 +6,7 @@ from flask.views import MethodView
 from werkzeug.utils import secure_filename
 import time
 import os
+import json
 
 app = Flask(__name__)
 had = HadoopInteractions()
@@ -117,19 +118,8 @@ def runMr():
 
 @app.route('/api/alpha', methods = ['POST', 'GET'])
 def runAlpha():
-  had.data()
-  if request.method == 'GET':
-    out = had.showData('/')
-    createAlpha(out)
-    return render_template('alpha.html', name = 'Dagen')
-  header = request.form['header']
-  files = request.form['files']
-  mp = Mapper()
-  if files[-3] == 'csv':
-    ma = mp.mapCsv(files,header)
-  elif files[-3] == 'xes':
-    ma = mp.mapXes(files,header)
-  return render_template('alpha.html', name = 'Dagen')
+  os.system("alphaAlgo.py")
+  return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 if __name__ == '__main__':
   up()

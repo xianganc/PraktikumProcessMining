@@ -49,18 +49,19 @@ def upload():
 
 
 def return_img_stream(img_local_path):
-    import base64
-    img_stream = ''
-    with open(img_local_path, 'r') as img_f:
-        img_stream = img_f.read()
-        img_stream = base64.b64encode(img_stream)
-    return img_stream
+  img_stream = ''
+  import base64
+  with open(img_local_path, 'r') as img_f:
+    img_stream = img_f.read()
+    img_stream = base64.b64encode(img_stream)
+  return img_stream
 
 @app.route('/result')
 def show():
-    img_path = '../../data/output.png'
-    img_stream = return_img_stream(img_path)
-    return render_template('result.html',img_stream=img_stream)
+	subprocess.check_output(['curl', '-s', '172.18.0.1:3000/api/alpha'])
+	img_path = '../../data/output.png'
+	img_stream = return_img_stream(img_path)
+	return render_template('result.html',img_stream=img_stream)
 
 if __name__ == '__main__':
 	app.run(debug = True, port = 8080, host='0.0.0.0')
