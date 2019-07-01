@@ -121,7 +121,7 @@ def runMr():
 def runAlpha():
   had.getData('data/example.xes','/tmp/input/')
   os.system("python3 /src/src/alphaAlgo.py")
-  return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+  return "success: True"
 
 if __name__ == '__main__':
   up()
