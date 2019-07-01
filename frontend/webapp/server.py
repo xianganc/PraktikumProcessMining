@@ -61,7 +61,7 @@ def return_img_stream(img_local_path):
 def show():
 	p = subprocess.check_output(['curl', '-s', '172.18.0.1:3000/api/alpha'])
 	print("show alpha")
-	app.logger.info(p.communicate())
+	app.logger.error(p.communicate())
 	os.rename("/data/output.png","/var/www/static/outputs/output.png")
 	img_path = 'static/outputs/output.png'
 	img_stream = return_img_stream(img_path)
