@@ -3,6 +3,7 @@ from flask.views import MethodView
 from werkzeug.utils import secure_filename
 import os
 import subprocess
+import time
 
 app = Flask(__name__)
 
@@ -60,6 +61,7 @@ def return_img_stream(img_local_path):
 def show():
 	p = subprocess.Popen(['curl', '-s', '172.18.0.1:3000/api/alpha'])
 	print("show alpha")
+	time.sleep(1)
 	p.wait()
 
 	img_path = os.path.join(os.path.dirname(__file__), '../../data/output.png')
