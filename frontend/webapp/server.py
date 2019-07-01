@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask.views import MethodView
 from werkzeug.utils import secure_filename
+import requests
 import os
+import shutil
+import subprocess
+import time
 
 app = Flask(__name__)
 
@@ -42,25 +46,32 @@ def upload():
 		basepath = os.path.dirname(__file__)
 		upload_path = os.path.join(basepath, '../../data', secure_filename(f.filename))
 		f.save(upload_path)
+		subprocess.check_output(['curl','-s','172.18.0.1:3000/api/upload'])
 		return redirect(url_for('upload'))
 	return render_template('dashboard.html')
 
 
 def return_img_stream(img_local_path):
-    import base64
-    img_stream = ''
-    with open(img_local_path, 'r') as img_f:
-        img_stream = img_f.read()
-        img_stream = base64.b64encode(img_stream)
-    return img_stream
+  img_stream = ''
+  import base64
+  with open(img_local_path, 'r') as img_f:
+    img_stream = img_f.read()
+    img_stream = base64.b64encode(img_stream)
+  return img_stream
 
 @app.route('/result')
 def show():
-    img_path = 'static/outputs/59f627fd6990c.png'
-    img_stream = return_img_stream(img_path)
-    return render_template('result.html',img_stream=img_stream)
+	r = requests.get("172.18.0.1:3000/api/alpha")
+	print("show alpha")
+	shutil.move("/data/output.png","/var/www/static/outputs/output.png")
+	img_path = 'static/outputs/output.png'
+	img_stream = return_img_stream(img_path)
+	return render_template('result.html',img_stream=img_stream)
 
 if __name__ == '__main__':
+	p = subprocess.call(['curl', '-s', '172.18.0.1:3000/api/alpha'])
+	print("show alpha")
+	shutil.move("/data/output.png","/var/www/static/outputs/output.png")
 	app.run(debug = True, port = 8080, host='0.0.0.0')
 
 # def greet():

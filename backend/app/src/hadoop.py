@@ -15,14 +15,20 @@ class HadoopInteractions:
 
   def pushData(self,from_,to_):
     """ pushing data into hadoop """
-    subprocess.check_output(["/src/bin/hdfs","dfs","-mkdir","-p","/home"+to_])
-    subprocess.check_output(["/src/bin/hdfs","dfs","-put",from_,"/home"+to_])
+    try:
+      subprocess.check_output(["/src/bin/hdfs","dfs","-mkdir","-p","/home"+to_])
+      subprocess.check_output(["/src/bin/hdfs","dfs","-put",from_,"/home"+to_])
+    except:
+      pass
     subprocess.check_output(["rm", "-f",from_])
     pass
 
   def getData(self, from_, to_):
     """ get data from hadoop """
-    subprocess.check_output(["/src/bin/hdfs", "dfs", "-get", from_,"/home"+to_])
+    try:
+      subprocess.check_output(["/src/bin/hdfs", "dfs", "-get", "/home/"+from_,to_])
+    except:
+      pass
     pass
 
   def showData(self,from_):

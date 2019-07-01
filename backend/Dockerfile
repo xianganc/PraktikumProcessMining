@@ -6,7 +6,8 @@ RUN mkdir -p \
   /src \
   /run/sshd \
   /root/.ssh \
-  /data
+  /data \
+  /tmp/input
 
 COPY ./backend/deps/ /deps/
 COPY ./backend/app/ /src/

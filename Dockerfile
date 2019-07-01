@@ -7,6 +7,7 @@ RUN apt-get install -y \
   python3-pip \
   openssh-server \
   default-jre \
-  curl
+  curl \
+  graphviz
 
 RUN pip3 install pm4py flask opyenxes

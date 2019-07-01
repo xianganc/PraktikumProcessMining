@@ -6,6 +6,7 @@ from flask.views import MethodView
 from werkzeug.utils import secure_filename
 import time
 import os
+import json
 
 app = Flask(__name__)
 had = HadoopInteractions()
@@ -78,6 +79,15 @@ def index():
 def showApi():
   return render_template('api.html', name = 'Dagen')
 
+@app.route('/api/upload')
+def up():
+  for (dirpath, dirnames, filenames) in os.walk('/data'):
+    for filename in filenames:
+      if os.path.splitext(filename)[1] in ['.png']:
+        continue
+      had.pushData(os.path.join(dirpath,filename),'/'+dirpath)
+
+
 @app.route('/api/mr', methods = ['POST', 'GET'])
 def runMr():
   had.data()
@@ -107,21 +117,12 @@ def runMr():
     """)
   return render_template('res.html', name = 'Dagen')
 
-@app.route('/api/alpha', methods = ['POST', 'GET'])
+@app.route('/api/alpha')
 def runAlpha():
-  had.data()
-  if request.method == 'GET':
-    out = had.showData('/')
-    createAlpha(out)
-    return render_template('alpha.html', name = 'Dagen')
-  header = request.form['header']
-  files = request.form['files']
-  mp = Mapper()
-  if files[-3] == 'csv':
-    ma = mp.mapCsv(files,header)
-  elif files[-3] == 'xes':
-    ma = mp.mapXes(files,header)
-  return render_template('alpha.html', name = 'Dagen')
+  had.getData('data/example.xes','/tmp/input/')
+  os.system("python3 /src/src/alphaAlgo.py")
+  return "success: True"
 
 if __name__ == '__main__':
-	app.run(debug = True, port = 3000, host='0.0.0.0')
+  up()
+  app.run(debug = True, port = 3000, host='0.0.0.0')
