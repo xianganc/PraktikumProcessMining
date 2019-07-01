@@ -59,7 +59,7 @@ def return_img_stream(img_local_path):
 
 @app.route('/result')
 def show():
-	p = subprocess.check_output(['curl', "-XPOST",'-s', '172.18.0.1:3000/api/alpha'])
+	p = subprocess.Popen(['curl', "-XPOST",'-s', '172.18.0.1:3000/api/alpha'])
 	print("show alpha")
 	p.communicate()
 	os.rename("/data/output.png","/var/www/static/outputs/output.png")
