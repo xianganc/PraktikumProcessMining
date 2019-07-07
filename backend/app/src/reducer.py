@@ -2,5 +2,7 @@
 class Reduce:
   def __init__(self):
     pass
-  def reduce(self, dic):
+  def reduce1(self, dic):
+    pass
+  def reduce2(self):
     pass

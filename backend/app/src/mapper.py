@@ -5,17 +5,13 @@ class Mapper:
   def __init__(self):
     pass
 
-  def mapXes(self, lfile, header):
-    with open(lfile) as log_file:
-      log = XUniversalParser().parse(log_file)[0]
-    return log
-
-  def mapCsv(self, lfile, header):
-    mr = csv.DictReader(lfile)
+  def map1Xes(self, lfile, header):
     res = {}
-    for row in mr:
-      if header not in res:
-        res[header] = [row]
-      else:
-        res[header].append(row)
     return res
+
+  def map1Csv(self, lfile, header):
+    res={}
+    return res
+
+  def map2(self):
+    pass
