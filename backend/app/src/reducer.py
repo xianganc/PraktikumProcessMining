@@ -4,7 +4,7 @@ class Reduce:
   def __init__(self):
     pass
 
-def reduce1(self, logDict):
+  def reduce1(self, logDict):
     tmp = {}
     for key in logDict.keys():
       trace = sorted(logDict[key],key=lambda k:k[1])
