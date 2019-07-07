@@ -13,10 +13,13 @@ class Mapper:
     res={}
     tmp = []
     with open(lfile, newline='') as f:
-      reader = csv.reader(f)
+      reader = csv.DictReader(f)
+      print(reader)
       for row in reader:
-        if case in row:
+        if case in row.keys():
+          print(row)
           tmp.append((row[case],row[activity],row[timestamp]))
+          print(tmp)
     for entry in tmp:
       if entry[0] in res:
         res[entry[0]].append((entry[1],entry[2]))
