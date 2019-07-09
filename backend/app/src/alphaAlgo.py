@@ -7,11 +7,21 @@ class Alpha():
     self.start = [time.time()]
     print("start init")
     self.log = reducedDict
-    self.tl = set(self.log['tl'])
-    self.ds = set(self.log['ds'])
-    self.cs = set(self.log['cs'])
-    self.pr = set(self.log['pr'])
-    self.ind = set(self.log['ind'])
+    self.tl = set()
+    self.ds = set()
+    self.cs = set()
+    self.pr = set()
+    self.ind = set()
+    for item in self.log['tl']:
+      self.tl.add(item)
+    for item in self.log['ds']:
+      self.ds.add(item)
+    for item in self.log['cs']:
+      self.cs.add(item)
+    for item in self.log['pr']:
+      self.pr.add(item)
+    for item in self.log['ind']:
+      self.ind.add(item)
     print("read log done")
     #self.ti = self.get_TI_set()
     #self.to = self.get_TO_set()
