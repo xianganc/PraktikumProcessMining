@@ -4,6 +4,7 @@ import time
 
 class Alpha():
   def __init__(self, reducedDict):
+    self.start = [time.time()]
     print("start init")
     self.log = reducedDict
     self.tl = self.log['tl']
@@ -19,7 +20,7 @@ class Alpha():
     print("xl set")
     self.yl = self.get_YL_set(self.xl, self.pr)
     print("init done")
-    self.start = [time.time()]
+
 
   def __str__(self):
     alpha_sets = []
