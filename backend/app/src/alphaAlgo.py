@@ -16,6 +16,7 @@ class Alpha():
     #self.to = self.get_TO_set()
     print("these sets")
     self.xl = self.get_XL_set(self.tl, self.ind, self.cs)
+    print("xl set")
     self.yl = self.get_YL_set(self.xl, self.pr)
     print("init done")
 
@@ -49,8 +50,11 @@ class Alpha():
   def get_XL_set(self, tl, ind, cs):
     xl = set()
     subsets = itertools.chain.from_iterable(itertools.combinations(tl, r) for r in range(1, len(tl) + 1))
+    print("after sub set")
     independent_a_or_b = [a_or_b for a_or_b in subsets if self.__is_ind_set(a_or_b, ind)]
+    print("after inde")
     for a, b in itertools.product(independent_a_or_b, independent_a_or_b):
+      print(a,b)
       if self.__is_cs_set((a, b), cs):
         xl.add((a, b))
     return xl
