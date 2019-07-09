@@ -17,7 +17,7 @@ def test1():
 
 def test2(infile):
 
-  alpha_model = Alpha(jsoned)
+  alpha_model = Alpha(infile)
   print('init done')
   alpha_model.generate_footprint(txtfile="{}_footprint.txt".format(infile))
   print("footprint done")

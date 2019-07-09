@@ -1,6 +1,7 @@
 import itertools
 import copy
 import time
+import json
 
 class Alpha():
   def __init__(self, reducedDict):
