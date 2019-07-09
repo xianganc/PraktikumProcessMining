@@ -1,8 +1,8 @@
 import json
 import mapper
 import reducer
-from alpha import Alpha
-from petri_net import PetriNet
+from alphaAlgo import Alpha
+from petri import PetriNet
 from subprocess import check_call
 
 def test1():
@@ -13,7 +13,7 @@ def test1():
   tmp = rp.reduce1(tmp)
   res = rp.reduce2(tmp)
   print(res)
-  with open('reduced.json') as reducedLog:
+  with open('reduced.json', "w") as reducedLog:
     json.dump(res,reducedLog)
 
 def test2(infile):
