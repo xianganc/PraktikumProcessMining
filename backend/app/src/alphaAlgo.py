@@ -1,6 +1,6 @@
 import itertools
 import copy
-
+import time
 
 class Alpha():
   def __init__(self, reducedDict):
@@ -19,6 +19,7 @@ class Alpha():
     print("xl set")
     self.yl = self.get_YL_set(self.xl, self.pr)
     print("init done")
+    self.start = [time.time()]
 
   def __str__(self):
     alpha_sets = []
@@ -51,7 +52,10 @@ class Alpha():
     xl = set()
     subsets = itertools.chain.from_iterable(itertools.combinations(tl, r) for r in range(1, len(tl) + 1))
     print("after sub set")
+    self.start.append(time.time())
     independent_a_or_b = [a_or_b for a_or_b in subsets if self.__is_ind_set(a_or_b, ind)]
+    self.start.append(time.time())
+    print(str(self.start[-1]-self.start[-2]) + " seconds")
     print("after inde")
     print(len(independent_a_or_b))
     for a, b in itertools.product(independent_a_or_b, independent_a_or_b):
@@ -61,6 +65,7 @@ class Alpha():
     return xl
 
   def __is_ind_set(self, s, ind):
+    print("__is_ind called")
     if len(s) == 1:
       return True
     else:
@@ -71,6 +76,7 @@ class Alpha():
       return True
 
   def __is_cs_set(self, s, cs):
+    print("__is_cs called")
     set_a, set_b = s[0], s[1]
     s_all = itertools.product(set_a, set_b)
     for pair in s_all:
