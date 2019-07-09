@@ -53,6 +53,7 @@ class Alpha():
     print("after sub set")
     independent_a_or_b = [a_or_b for a_or_b in subsets if self.__is_ind_set(a_or_b, ind)]
     print("after inde")
+    print(len(independent_a_or_b))
     for a, b in itertools.product(independent_a_or_b, independent_a_or_b):
       print(a,b)
       if self.__is_cs_set((a, b), cs):
