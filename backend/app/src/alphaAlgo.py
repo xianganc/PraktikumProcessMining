@@ -4,27 +4,37 @@ import time
 
 class Alpha():
   def __init__(self, reducedDict):
+    with open(reducedDict) as inf:
+      jsoned = json.load(inf)
+    for element in jsoned.keys():
+      if element == 'ti':
+        self.ti = set(jsoned[element])
+        continue
+      if element == 'to':
+        self.to = set(jsoned[element])
+        continue
+      for entry in jsoned[element]:
+        jsoned[element] = tuple(entry)
     self.start = [time.time()]
     print("start init")
-    self.log = reducedDict
+    self.log = jsoned
     self.tl = set()
     self.ds = set()
     self.cs = set()
     self.pr = set()
     self.ind = set()
-    for item in self.log['tl']:
-      self.tl.add(item)
     for item in self.log['ds']:
+      print(item)
       self.ds.add(item)
     for item in self.log['cs']:
       self.cs.add(item)
+    for item in self.log['tl']:
+      self.tl.add(item)
     for item in self.log['pr']:
       self.pr.add(item)
     for item in self.log['ind']:
       self.ind.add(item)
     print("read log done")
-    #self.ti = self.get_TI_set()
-    #self.to = self.get_TO_set()
     print("these sets")
     self.xl = self.get_XL_set(self.tl, self.ind, self.cs)
     print("xl set")
@@ -34,8 +44,8 @@ class Alpha():
 
   def __str__(self):
     alpha_sets = []
-    #alpha_sets.append("TI set: {}".format(self.ti))
-    #alpha_sets.append("TO set: {}".format(self.to))
+    alpha_sets.append("TI set: {}".format(self.ti))
+    alpha_sets.append("TO set: {}".format(self.to))
     alpha_sets.append("XL set: {}".format(self.xl))
     alpha_sets.append("YL set: {}".format(self.yl))
     return '\n'.join(alpha_sets)

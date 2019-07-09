@@ -10,15 +10,14 @@ def test1():
   rp = reducer.Reduce()
 
   tmp = mp.map1Csv('/home/ichus/Documents/PraktikumProcessMining/data/running-example.csv',activity='Activity',timestamp='time:timestamp',case='case:concept:name')
-  tmp = rp.reduce1(tmp)
-  res = rp.reduce2(tmp)
-  print(res)
+  tmp, ti, to = rp.reduce1(tmp)
+  res = rp.reduce2(tmp, ti, to)
   with open('reduced.json', "w") as reducedLog:
     json.dump(res,reducedLog)
 
 def test2(infile):
 
-  alpha_model = Alpha(infile)
+  alpha_model = Alpha(jsoned)
   print('init done')
   alpha_model.generate_footprint(txtfile="{}_footprint.txt".format(infile))
   print("footprint done")
