@@ -66,7 +66,6 @@ class Alpha():
     return xl
 
   def __is_ind_set(self, s, ind):
-    print("__is_ind called")
     if len(s) == 1:
       return True
     else:
@@ -77,7 +76,6 @@ class Alpha():
       return True
 
   def __is_cs_set(self, s, cs):
-    print("__is_cs called")
     set_a, set_b = s[0], s[1]
     s_all = itertools.product(set_a, set_b)
     for pair in s_all:
