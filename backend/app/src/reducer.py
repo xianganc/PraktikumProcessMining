@@ -22,5 +22,21 @@ class Reduce:
             tmp[(trace[j][0],trace[i][0])] = (True or tmp[(trace[j][0],trace[i][0])][0],tmp[(trace[j][0],trace[i][0])][1] or False)
     return tmp
 
-  def reduce2(self):
-    pass
+  def reduce2(self, reducedDict):
+    res = {}
+    res['ds'] = set()
+    res['cs'] = set()
+    res['pr'] = set()
+    res['ind'] = set()
+    res['tl'] = set()
+    for element in reducedDict.keys():
+      if reducedDict[element][0]:
+        res['ds'].add(element)
+      if reducedDict[element] == (True, False):
+        res['cs'].add(element)
+      if reducedDict[element] == (True, True):
+        res['pr'].add(element)
+      if reducedDict[element] == (False, False):
+        res['ind'].add(element)
+      res['tl'].add(element)
+    return res

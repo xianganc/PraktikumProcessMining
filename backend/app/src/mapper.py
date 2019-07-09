@@ -23,6 +23,3 @@ class Mapper:
       else:
         res[entry[0]] = [(entry[1],entry[2])]
     return res
-
-  def map2(self):
-    pass

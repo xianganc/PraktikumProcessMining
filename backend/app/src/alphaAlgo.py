@@ -1,23 +1,15 @@
-from pm4py.algo.discovery.alpha import factory as alpha_miner
-from pm4py.objects.log.importer.xes import factory as xes_importer
-from pm4py.visualization.petrinet import factory as vis_factory
-
-log = xes_importer.import_log('/tmp/input/example.xes')
-net, initial_marking, final_marking = alpha_miner.apply(log)
-gviz = vis_factory.apply(net, initial_marking, final_marking)
-vis_factory.save(gviz,'/data/output.png')
-
 import itertools
 import copy
 
+
 class Alpha():
-  def __init__(self, log):
-    self.log = set(log)
-    self.tl = self.get_TL_set()
-    self.ds = self.direct_succession()
-    self.cs = self.causality(self.ds)
-    self.pr = self.parallel(self.ds)
-    self.ind = self.choice(self.tl, self.cs, self.pr)
+  def __init__(self, reducedDict):
+    self.log = reducedDict
+    self.tl = self.log['tl']
+    self.ds = self.log['ds']
+    self.cs = self.log['cs']
+    self.pr = self.log['pr']
+    self.ind = self.log['ind']
     self.ti = self.get_TI_set()
     self.to = self.get_TO_set()
     self.xl = self.get_XL_set(self.tl, self.ind, self.cs)
@@ -117,32 +109,3 @@ class Alpha():
   def generate_footprint(self, txtfile='footprint.txt'):
     with open(txtfile, 'w') as f:
       f.write(self.get_footprint())
-
-  def direct_succession(self):
-    ds = set()
-    for trace in self.log:
-      for x, y in zip(trace, trace[1:]):
-        ds.add((x, y))
-    return ds
-
-  def causality(self, ds):
-    cs = set()
-    for pair in ds:
-      if pair[::-1] not in ds:
-        cs.add(pair)
-    return cs
-
-  def parallel(self, ds):
-    pr = set()
-    for pair in ds:
-      if pair[::-1] in ds:
-        pr.add(pair)
-    return pr
-
-  def choice(self, tl, cs, pr):
-    ind = set()
-    all_permutations = itertools.permutations(tl, 2)
-    for pair in all_permutations:
-      if pair not in cs and pair[::-1] not in cs and pair not in pr:
-        ind.add(pair)
-    return ind
