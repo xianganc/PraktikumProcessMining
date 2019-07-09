@@ -4,21 +4,25 @@ import copy
 
 class Alpha():
   def __init__(self, reducedDict):
+    print("start init")
     self.log = reducedDict
     self.tl = self.log['tl']
     self.ds = self.log['ds']
     self.cs = self.log['cs']
     self.pr = self.log['pr']
     self.ind = self.log['ind']
-    self.ti = self.get_TI_set()
-    self.to = self.get_TO_set()
+    print("read log done")
+    #self.ti = self.get_TI_set()
+    #self.to = self.get_TO_set()
+    print("these sets")
     self.xl = self.get_XL_set(self.tl, self.ind, self.cs)
     self.yl = self.get_YL_set(self.xl, self.pr)
+    print("init done")
 
   def __str__(self):
     alpha_sets = []
-    alpha_sets.append("TI set: {}".format(self.ti))
-    alpha_sets.append("TO set: {}".format(self.to))
+    #alpha_sets.append("TI set: {}".format(self.ti))
+    #alpha_sets.append("TO set: {}".format(self.to))
     alpha_sets.append("XL set: {}".format(self.xl))
     alpha_sets.append("YL set: {}".format(self.yl))
     return '\n'.join(alpha_sets)
