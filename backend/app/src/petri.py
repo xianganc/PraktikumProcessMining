@@ -39,9 +39,6 @@ class PetriNet():
                 pn.append('"{}" -> "{}";'.format(n, i))
                 pn.append('"{}" [shape=box];'.format(i))
         for i in ti:
-            print("-----------------")
-            print(i)
-            print("-----------------")
             pn.append('In -> "{}" '.format(str(i)))
         for o in to:
             pn.append('"{}" -> Out'.format(o))

@@ -13,9 +13,7 @@ class Reduce:
       tmp[element] = (False,False)
     for key in logDict.keys():
       trace = sorted(logDict[key],key=lambda k:k[1])
-      print("------------------------------------------------------------------------------------")
       for i in range(len(trace)):
-        print(trace[i][0])
         if i == 0:
           ti.add(trace[i][0])
         if i == len(trace)-1:
@@ -31,7 +29,6 @@ class Reduce:
             if (trace[j][0],trace[i][0]) not in tmp:
               tmp[(trace[j][0],trace[i][0])] = (False,False)
             tmp[(trace[j][0],trace[i][0])] = (True or tmp[(trace[j][0],trace[i][0])][0],tmp[(trace[j][0],trace[i][0])][1] or False)
-    print(tmp)
     return tmp, ti, to, tl
 
   def reduce2(self, reducedDict, ti, to, tl):
@@ -52,8 +49,6 @@ class Reduce:
         res['ind'].add(element)
     for element in res:
         res[element] = list(res[element])
-    print("#########################################################################################")
-    print(res['ind'])
     res['ti'] = list(ti)
     res['to'] = list(to)
     return res
