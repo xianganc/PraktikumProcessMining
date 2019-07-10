@@ -17,9 +17,11 @@ class Mapper:
       for row in reader:
         if case in row.keys():
           tmp.append((row[case],row[activity],row[timestamp]))
+    tl = set()
     for entry in tmp:
       if entry[0] in res:
         res[entry[0]].append((entry[1],entry[2]))
       else:
         res[entry[0]] = [(entry[1],entry[2])]
-    return res
+      tl.add(entry[1])
+    return res, tl

@@ -4,7 +4,7 @@ class Reduce:
   def __init__(self):
     pass
 
-  def reduce1(self, logDict):
+  def reduce1(self, logDict, tl):
     tmp = {}
     ti = set()
     to = set()
@@ -26,15 +26,15 @@ class Reduce:
             if (trace[j][0],trace[i][0]) not in tmp:
               tmp[(trace[j][0],trace[i][0])] = (False,False)
             tmp[(trace[j][0],trace[i][0])] = (True or tmp[(trace[j][0],trace[i][0])][0],tmp[(trace[j][0],trace[i][0])][1] or False)
-    return tmp, ti, to
+    return tmp, ti, to, tl
 
-  def reduce2(self, reducedDict, ti, to):
+  def reduce2(self, reducedDict, ti, to, tl):
     res = {}
     res['ds'] = set()
     res['cs'] = set()
     res['pr'] = set()
     res['ind'] = set()
-    res['tl'] = set()
+    res['tl'] = tl
     for element in reducedDict.keys():
       if reducedDict[element][0]:
         res['ds'].add(element)
@@ -44,9 +44,7 @@ class Reduce:
         res['pr'].add(element)
       if reducedDict[element] == (False, False):
         res['ind'].add(element)
-      res['tl'].add(element)
     for element in res:
-        print(list(res[element]))
         res[element] = list(res[element])
     res['ti'] = list(ti)
     res['to'] = list(to)

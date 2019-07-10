@@ -9,9 +9,9 @@ def test1():
   mp = mapper.Mapper()
   rp = reducer.Reduce()
 
-  tmp = mp.map1Csv('/home/ichus/Documents/PraktikumProcessMining/data/running-example.csv',activity='Activity',timestamp='time:timestamp',case='case:concept:name')
-  tmp, ti, to = rp.reduce1(tmp)
-  res = rp.reduce2(tmp, ti, to)
+  tmp, tl = mp.map1Csv('/home/ichus/Documents/PraktikumProcessMining/data/running-example.csv',activity='Activity',timestamp='time:timestamp',case='case:concept:name')
+  tmp, ti, to, tl = rp.reduce1(tmp, tl)
+  res = rp.reduce2(tmp, ti, to, tl)
   with open('reduced.json', "w") as reducedLog:
     json.dump(res,reducedLog)
 

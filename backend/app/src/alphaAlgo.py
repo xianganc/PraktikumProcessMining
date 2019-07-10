@@ -7,34 +7,27 @@ class Alpha():
   def __init__(self, reducedDict):
     with open(reducedDict) as inf:
       jsoned = json.load(inf)
+    self.pr = set()
+    self.ds = set()
+    self.cs = set()
     for element in jsoned.keys():
       if element == 'ti':
         self.ti = set(jsoned[element])
-        continue
-      if element == 'to':
+      elif element == 'to':
         self.to = set(jsoned[element])
-        continue
-      for entry in jsoned[element]:
-        jsoned[element] = tuple(entry)
-    self.start = [time.time()]
-    print("start init")
-    self.log = jsoned
-    self.tl = set()
-    self.ds = set()
-    self.cs = set()
-    self.pr = set()
-    self.ind = set()
-    for item in self.log['ds']:
-      print(item)
-      self.ds.add(item)
-    for item in self.log['cs']:
-      self.cs.add(item)
-    for item in self.log['tl']:
-      self.tl.add(item)
-    for item in self.log['pr']:
-      self.pr.add(item)
-    for item in self.log['ind']:
-      self.ind.add(item)
+      elif element == 'tl':
+        self.tl = set(jsoned[element])
+      elif element == 'pr':
+        for entry in jsoned[element]:
+          self.pr.add(tuple(entry))
+      elif element == 'cs':
+        for entry in jsoned[element]:
+          self.cs.add(tuple(entry))
+      elif element == 'ds':
+        for entry in jsoned[element]:
+          self.ds.add(tuple(entry))
+    self.ind = self.choice(self.tl, self.cs, self.pr)
+    print(self.ti, self.to)
     print("read log done")
     print("these sets")
     self.xl = self.get_XL_set(self.tl, self.ind, self.cs)
@@ -73,13 +66,8 @@ class Alpha():
   def get_XL_set(self, tl, ind, cs):
     xl = set()
     subsets = itertools.chain.from_iterable(itertools.combinations(tl, r) for r in range(1, len(tl) + 1))
-    self.start.append(time.time())
     independent_a_or_b = [a_or_b for a_or_b in subsets if self.__is_ind_set(a_or_b, ind)]
-    self.start.append(time.time())
-    print(str(self.start[-1]-self.start[-2]) + " seconds")
-    print("after inde")
     for a, b in itertools.product(independent_a_or_b, independent_a_or_b):
-      print(a,b)
       if self.__is_cs_set((a, b), cs):
         xl.add((a, b))
     return xl
@@ -142,3 +130,11 @@ class Alpha():
   def generate_footprint(self, txtfile='footprint.txt'):
     with open(txtfile, 'w') as f:
       f.write(self.get_footprint())
+
+  def choice(self, tl, cs, pr):
+    ind = set() 
+    all_permutations = itertools.permutations(tl, 2)
+    for pair in all_permutations:
+      if pair not in cs and pair[::-1] not in cs and pair not in pr:
+        ind.add(pair)
+    return ind
