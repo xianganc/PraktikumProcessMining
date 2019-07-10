@@ -9,8 +9,10 @@ class Reduce:
     tmp = {}
     ti = set()
     to = set()
-    for element in itertools.product(tl,tl):
-      tmp[element] = (False,False)
+    for a,b in itertools.product(tl,tl):
+      if (b,a) in tmp:
+        continue
+      tmp[(a,b)] = (False,False)
     for key in logDict.keys():
       trace = sorted(logDict[key],key=lambda k:k[1])
       for i in range(len(trace)):
@@ -21,7 +23,7 @@ class Reduce:
         for j in range(len(trace)):
           if i == j:
             continue
-          elif i == j-1:
+          elif i+1 == j:
             if (trace[j][0],trace[i][0]) not in tmp:
               tmp[(trace[j][0],trace[i][0])] = (False,False)
             tmp[(trace[j][0],trace[i][0])] = (False or tmp[(trace[j][0],trace[i][0])][0],tmp[(trace[j][0],trace[i][0])][1] or True)

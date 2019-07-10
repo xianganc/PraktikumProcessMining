@@ -9,8 +9,8 @@ def test1():
   mp = mapper.Mapper()
   rp = reducer.Reduce()
 
-  tmp, tl = mp.map1Xes('/home/ichus/Documents/PraktikumProcessMining/data/roadtraffic50traces.xes',activity='concept:name',timestamp='time:timestamp',case='concept:name')
-  #tmp, tl = mp.map1Csv('/home/ichus/Documents/PraktikumProcessMining/data/receipt.csv',activity='concept:name',timestamp='time:timestamp',case='case:concept:name')
+  #tmp, tl = mp.map1Xes('/home/ichus/Documents/PraktikumProcessMining/data/roadtraffic100traces.xes',activity='concept:name',timestamp='time:timestamp',case='concept:name')
+  tmp, tl = mp.map1Csv('/home/ichus/Documents/PraktikumProcessMining/data/roadtraffic100traces.csv',activity='concept:name',timestamp='time:timestamp',case='case:concept:name')
   tmp, ti, to, tl = rp.reduce1(tmp, tl)
   res = rp.reduce2(tmp, ti, to, tl)
   with open('reduced.json', "w") as reducedLog:
