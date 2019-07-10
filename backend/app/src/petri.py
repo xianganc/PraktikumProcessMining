@@ -26,15 +26,17 @@ class PetriNet():
         pn = []
         pn.append("digraph pn {")
         pn.append("rankdir=LR;")
+        n = ""
         for c in iso:
             pn.append('"{}" [shape=box];'.format(c))
         for pair in yl:
+            n+= " "
             for i in pair[0]:
-                pn.append('"{}" -> "P({})";'.format(i, pair))
+                pn.append('"{}" -> "{}";'.format(i,n))
                 pn.append('"{}" [shape=box];'.format(i))
-                pn.append('"P({})" [shape=circle];'.format(pair))
+                pn.append('"{}" [shape=circle];'.format(n))
             for i in pair[1]:
-                pn.append('"P({})" -> "{}";'.format(pair, i))
+                pn.append('"{}" -> "{}";'.format(n, i))
                 pn.append('"{}" [shape=box];'.format(i))
         for i in ti:
             print("-----------------")
