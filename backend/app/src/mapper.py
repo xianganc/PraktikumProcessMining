@@ -1,4 +1,5 @@
 import csv
+import json
 from opyenxes.data_in.XUniversalParser import XUniversalParser
 
 class Mapper:
@@ -24,4 +25,5 @@ class Mapper:
       else:
         res[entry[0]] = [(entry[1],entry[2])]
       tl.add(entry[1])
+    print(json.dumps(res,indent=2))
     return res, tl

@@ -6,3 +6,6 @@
 *.txt
 latex-template/
 sshFile/sshCommand
+*.json
+*.dot
+/backend/app/src/*.png

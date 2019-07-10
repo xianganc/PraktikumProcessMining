@@ -27,12 +27,13 @@ class Alpha():
         for entry in jsoned[element]:
           self.ds.add(tuple(entry))
     self.ind = self.choice(self.tl, self.cs, self.pr)
-    print(self.ti, self.to)
     print("read log done")
     print("these sets")
     self.xl = self.get_XL_set(self.tl, self.ind, self.cs)
     print("xl set")
+
     self.yl = self.get_YL_set(self.xl, self.pr)
+    print("yl set")
     print("init done")
 
 
@@ -44,32 +45,13 @@ class Alpha():
     alpha_sets.append("YL set: {}".format(self.yl))
     return '\n'.join(alpha_sets)
 
-  def get_TL_set(self):
-    tl = set()
-    for item in self.log:
-      for i in item:
-        tl.add(i)
-    return tl
-
-  def get_TI_set(self):
-    ti = set()
-    for item in self.log:
-      ti.add(item[0])
-    return ti
-
-  def get_TO_set(self):
-    to = set()
-    for item in self.log:
-      to.add(item[-1])
-    return to
-
   def get_XL_set(self, tl, ind, cs):
     xl = set()
     subsets = itertools.chain.from_iterable(itertools.combinations(tl, r) for r in range(1, len(tl) + 1))
     independent_a_or_b = [a_or_b for a_or_b in subsets if self.__is_ind_set(a_or_b, ind)]
-    for a, b in itertools.product(independent_a_or_b, independent_a_or_b):
-      if self.__is_cs_set((a, b), cs):
-        xl.add((a, b))
+    for a in itertools.product(independent_a_or_b, independent_a_or_b):
+      if self.__is_cs_set(a, cs):
+        xl.add(a)
     return xl
 
   def __is_ind_set(self, s, ind):
@@ -132,7 +114,7 @@ class Alpha():
       f.write(self.get_footprint())
 
   def choice(self, tl, cs, pr):
-    ind = set() 
+    ind = set()
     all_permutations = itertools.permutations(tl, 2)
     for pair in all_permutations:
       if pair not in cs and pair[::-1] not in cs and pair not in pr:
