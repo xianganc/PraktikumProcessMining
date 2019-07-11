@@ -112,8 +112,7 @@ def runMr():
 
 @app.route('/api/alpha')
 def runAlpha():
-  had.getData('/tmp/out.json','/tmp/input/')
-  os.system("python3 /src/src/alphaAlgo.py")
+  os.system("python3 /src/src/alphaAlgo.py /tmp/out.json")
   return "success: True"
 
 if __name__ == '__main__':
