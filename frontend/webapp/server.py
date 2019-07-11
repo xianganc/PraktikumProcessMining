@@ -46,7 +46,6 @@ def upload():
 		basepath = os.path.dirname(__file__)
 		upload_path = os.path.join(basepath, '../../data', secure_filename(f.filename))
 		f.save(upload_path)
-		subprocess.check_output(['curl',"-XPUT",'-s','172.18.0.1:3000/api/upload','&'])
 		return redirect(url_for('upload'))
 	return render_template('dashboard.html')
 
@@ -61,7 +60,6 @@ def return_img_stream(img_local_path):
 
 @app.route('/result')
 def show():
-	r = requests.get("172.18.0.1:3000/api/alpha")
 	print("show alpha")
 	shutil.move("/data/output.png","/var/www/static/outputs/output.png")
 	img_path = 'static/outputs/output.png'
