@@ -98,11 +98,11 @@ def runMr():
   files = request.form['files']
   mp = Mapper()
   rp = Reduce()
-  if files[:-3] == 'csv':
+  if files[-3:] == 'csv':
     ma, tl = mp.map1Csv(files)
     tmp, ti, to, tl = rp.reduce1(ma, tl)
     res = rp.reduce2(tmp, ti, to, tl)
-  elif files[:-3] == 'xes':
+  elif files[-3:] == 'xes':
     ma, tl = mp.map1Xes(files)
     tmp, ti, to, tl = rp.reduce1(ma, tl)
     res = rp.reduce2(tmp, ti, to, tl)
