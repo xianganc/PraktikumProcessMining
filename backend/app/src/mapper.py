@@ -8,7 +8,7 @@ class Mapper:
   def __init__(self):
     pass
 
-  def map1Xes(self, lfile, activity, timestamp, case):
+  def map1Xes(self, lfile, activity="concept:name", timestamp="time:timestamp", case="concept:name"):
     tmp = [ ]
     res = {}
     tl = set()
@@ -25,7 +25,7 @@ class Mapper:
       tl.add(entry[1])
     return res, tl
 
-  def map1Csv(self, lfile, activity, timestamp, case):
+  def map1Csv(self, lfile, activity="concept:name", timestamp="time:timestamp", case="case:concept:name"):
     res={}
     tmp = []
     tl = set()

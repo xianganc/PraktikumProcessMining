@@ -1,6 +1,7 @@
 import json
 import mapper
 import reducer
+import sys
 from alphaAlgo import Alpha
 from petri import PetriNet
 from subprocess import check_call
@@ -30,7 +31,4 @@ def test2(infile):
   print("viz done")
 
 if __name__ == '__main__':
-  test1()
-  print('test1 done')
-  test2('reduced.json')
-  print("test2 done")
+  test2(sys.argv[1])

@@ -83,8 +83,19 @@ def showApi():
 def up():
   for (dirpath, dirnames, filenames) in os.walk('/data'):
     for filename in filenames:
+      mp = Mapper()
+      rp = Reduce()
+      if filename[-3] == 'csv':
+        ma = mp.map1Csv(filename)
+      elif filename[-3] == 'xes':
+        ma = mp.map1Xes(filename)
+      tmp, ti, to, tl = rp.reduce1(tmp, tl)
+      res = rp.reduce2(tmp, ti, to, tl)
+      with open(os.path.join(dirpath,filename)+'.json', "w") as reducedLog:
+        json.dump(res,reducedLog)
       if os.path.splitext(filename)[1] in ['.png']:
         continue
+      os.system("python3 /src/src/test.py "+os.path.join(dirpath,filename))
       had.pushData(os.path.join(dirpath,filename),'/'+dirpath)
 
 
@@ -100,9 +111,9 @@ def runMr():
   event = request.form['event']
   mp = Mapper()
   if files[-3] == 'csv':
-    ma = mp.mapCsv(files,header)
+    ma = mp.map1Csv(files,header)
   elif files[-3] == 'xes':
-    ma = mp.mapXes(files,header)
+    ma = mp.map1Xes(files,header)
   with open("/src/src/templates/res.html",'w') as out:
     out.write("""<html>
     <body>
