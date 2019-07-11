@@ -95,7 +95,6 @@ def runMr():
     out = had.showData('/')
     createMR(out)
     return render_template('mr.html', name = 'Dagen')
-  header = request.form['header']
   files = request.form['files']
   mp = Mapper()
   rp = Reduce()
@@ -107,21 +106,9 @@ def runMr():
     ma, tl = mp.map1Xes(files)
     tmp, ti, to, tl = rp.reduce1(ma, tl)
     res = rp.reduce2(tmp, ti, to, tl)
-  with open("/src/src/templates/res.html",'w') as out:
-    out.write("""<html>
-    <body>
-    <table>""")
-    for entry in ma:
-      out.write("<tr>")
-      out.write("<td>"+entry+"</td>")
-      out.write("</tr>")
-    out.write("""</table>
-    </body>
-    </html>
-    """)
   with open('/tmp/out.json', "w") as reducedLog:
     json.dump(res,reducedLog)
-  return render_template('res.html', name = 'Dagen')
+  return "success"
 
 @app.route('/api/alpha')
 def runAlpha():
