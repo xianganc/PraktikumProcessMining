@@ -83,21 +83,8 @@ def showApi():
 def up():
   for (dirpath, dirnames, filenames) in os.walk('/data'):
     for filename in filenames:
-      mp = Mapper()
-      rp = Reduce()
-      if filename[-3] == 'csv':
-        ma, tl = mp.map1Csv(filename)
-      elif filename[-3] == 'xes':
-        ma, tl = mp.map1Xes(filename)
-      else:
-        continue
-      tmp, ti, to, tl = rp.reduce1(ma, tl)
-      res = rp.reduce2(tmp, ti, to, tl)
-      with open(os.path.join(dirpath,filename)+'.json', "w") as reducedLog:
-        json.dump(res,reducedLog)
       if os.path.splitext(filename)[1] in ['.png']:
         continue
-      os.system("python3 /src/src/test.py "+os.path.join(dirpath,filename))
       had.pushData(os.path.join(dirpath,filename),'/'+dirpath)
 
 
