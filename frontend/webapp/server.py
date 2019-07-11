@@ -69,9 +69,6 @@ def show():
 	return render_template('result.html',img_stream=img_stream)
 
 if __name__ == '__main__':
-	p = subprocess.call(['curl', '-s', '172.18.0.1:3000/api/alpha'])
-	print("show alpha")
-	shutil.move("/data/output.png","/var/www/static/outputs/output.png")
 	app.run(debug = True, port = 8080, host='0.0.0.0')
 
 # def greet():

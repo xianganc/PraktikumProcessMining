@@ -55,7 +55,7 @@ class PetriNet():
         for pair in yl:
             for p in pair:
                 yl_transitions.add(p[0])
-
+        print(yl)
         appeared = ti | to | yl_transitions
         iso = tl - appeared
         return iso

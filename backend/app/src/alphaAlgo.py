@@ -33,8 +33,6 @@ class Alpha():
     print("xl set")
     self.yl = self.get_YL_set(self.xl, self.pr)
     print("yl set")
-    print(self.xl)
-    print(self.pr)
     print("init done")
 
 
@@ -53,6 +51,7 @@ class Alpha():
     for a,b in itertools.product(independent_a_or_b, independent_a_or_b):
       if self.__is_cs_set((a,b), cs):
         xl.add((a,b))
+    print(xl)
     return xl
 
   def __is_ind_set(self, s, ind):

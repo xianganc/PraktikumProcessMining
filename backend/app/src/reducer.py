@@ -35,20 +35,20 @@ class Reduce:
 
   def reduce2(self, reducedDict, ti, to, tl):
     res = {}
-    res['ds'] = set()
-    res['cs'] = set()
-    res['pr'] = set()
-    res['ind'] = set()
+    res['ds'] = list()
+    res['cs'] = list()
+    res['pr'] = list()
+    res['ind'] = list()
     res['tl'] = list(tl)
     for element in reducedDict.keys():
       if reducedDict[element][0]:
-        res['ds'].add(element)
+        res['ds'].append(element)
       if reducedDict[element] == (True, False):
-        res['cs'].add(element)
+        res['cs'].append(element)
       if reducedDict[element] == (True, True):
-        res['pr'].add(element)
+        res['pr'].append(element)
       if reducedDict[element] == (False, False):
-        res['ind'].add(element)
+        res['ind'].append(element)
     for element in res:
         res[element] = list(res[element])
     res['ti'] = list(ti)
