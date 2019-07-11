@@ -97,12 +97,16 @@ def runMr():
     return render_template('mr.html', name = 'Dagen')
   header = request.form['header']
   files = request.form['files']
-  event = request.form['event']
   mp = Mapper()
+  rp = Reduce()
   if files[-3] == 'csv':
-    ma = mp.map1Csv(files,header)
+    ma, tl = mp.map1Csv(files)
+    tmp, ti, to, tl = rp.reduce1(ma, tl)
+    res = rp.reduce2(tmp, ti, to, tl)
   elif files[-3] == 'xes':
-    ma = mp.map1Xes(files,header)
+    ma, tl = mp.map1Xes(files)
+    tmp, ti, to, tl = rp.reduce1(ma, tl)
+    res = rp.reduce2(tmp, ti, to, tl)
   with open("/src/src/templates/res.html",'w') as out:
     out.write("""<html>
     <body>
@@ -115,11 +119,13 @@ def runMr():
     </body>
     </html>
     """)
+  with open('/tmp/out.json', "w") as reducedLog:
+    json.dump(res,reducedLog)
   return render_template('res.html', name = 'Dagen')
 
 @app.route('/api/alpha')
 def runAlpha():
-  had.getData('data/example.xes','/tmp/input/')
+  had.getData('/tmp/out.json','/tmp/input/')
   os.system("python3 /src/src/alphaAlgo.py")
   return "success: True"
 

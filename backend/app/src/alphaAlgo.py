@@ -2,6 +2,10 @@ import itertools
 import copy
 import time
 import json
+import sys
+import subprocess
+import shutil
+from petri import PetriNet
 
 class Alpha():
   def __init__(self, reducedDict):
@@ -120,3 +124,17 @@ class Alpha():
       if pair not in cs and pair[::-1] not in cs and pair not in pr:
         ind.add(pair)
     return ind
+
+if __name__ == '__main__':
+  infile = sys.argv[1]
+  alpha_model = Alpha(infile)
+  print('init done')
+  alpha_model.generate_footprint(txtfile="{}_footprint.txt".format(infile))
+  print("footprint done")
+  pn = PetriNet()
+  print("petrinet init done")
+  pn.generate_with_alpha(alpha_model, dotfile="{}.dot".format(infile))
+  print("petrinet done")
+  subprocess.check_call(["dot", "-Tpng", "{}.dot".format(infile),"-o", "{}.png".format('output')])
+  shutil.move('/tmp/output.png', '/data/output.png')
+  print("viz done")
