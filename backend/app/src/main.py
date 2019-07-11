@@ -89,6 +89,8 @@ def up():
         ma, tl = mp.map1Csv(filename)
       elif filename[-3] == 'xes':
         ma, tl = mp.map1Xes(filename)
+      else:
+        continue
       tmp, ti, to, tl = rp.reduce1(ma, tl)
       res = rp.reduce2(tmp, ti, to, tl)
       with open(os.path.join(dirpath,filename)+'.json', "w") as reducedLog:
