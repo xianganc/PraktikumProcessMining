@@ -13,7 +13,7 @@ class HadoopInteractions:
         self.pushData(os.path.join(dirpath,names),'/')
 
 
-  def pushData(self,from_,to_):
+  def pushData(self, from_, to_):
     """ pushing data into hadoop """
     try:
       subprocess.check_output(["/src/bin/hdfs","dfs","-mkdir","-p","/home"+to_])
@@ -32,7 +32,7 @@ class HadoopInteractions:
       pass
     pass
 
-  def showData(self,from_):
+  def showData(self, from_):
     """ get data from hadoop """
     out = subprocess.check_output(["/src/bin/hdfs", "dfs", "-ls", "-R", "/home"+from_])
     res = []
