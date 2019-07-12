@@ -26,6 +26,7 @@ class HadoopInteractions:
   def getData(self, from_, to_):
     """ get data from hadoop """
     try:
+      subprocess.check_output(["mkdir","-p",to_])
       subprocess.check_output(["/src/bin/hdfs", "dfs", "-get", "/home/"+from_,to_])
     except:
       pass
