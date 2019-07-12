@@ -62,7 +62,10 @@ def return_img_stream(img_local_path):
 @app.route('/result')
 def show():
 	print("show alpha")
-	shutil.move("/data/output.png","/var/www/static/outputs/output.png")
+        try:
+	  shutil.move("/data/output.png","/var/www/static/outputs/output.png")
+        except:
+            pass
 	img_path = 'static/outputs/output.png'
 	img_stream = return_img_stream(img_path)
 	return render_template('result.html',img_stream=img_stream)

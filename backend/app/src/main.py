@@ -98,7 +98,7 @@ def runMr():
   files = request.form['files']
   mp = Mapper()
   rp = Reduce()
-  had.getData(files,'/tmp/')
+  had.getData(files,'/tmp/data')
   if files[-3:] == 'csv':
     ma, tl = mp.map1Csv('/tmp/'+files)
     tmp, ti, to, tl = rp.reduce1(ma, tl)

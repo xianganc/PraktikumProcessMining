@@ -136,5 +136,5 @@ if __name__ == '__main__':
   pn.generate_with_alpha(alpha_model, dotfile="{}.dot".format(infile))
   print("petrinet done")
   subprocess.check_call(["dot", "-Tpng", "{}.dot".format(infile),"-o", "{}.png".format('output')])
-  shutil.move('/tmp/output.png', '/data/output.png')
+  shutil.move('output.png', '/data/output.png')
   print("viz done")
