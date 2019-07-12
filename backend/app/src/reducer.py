@@ -14,7 +14,7 @@ class Reduce:
         continue
       tmp[(a,b)] = (False,False)
     for key in logDict.keys():
-      trace = sorted(logDict[key],key=lambda k:k[1])
+      trace = sorted(logDict[key], key=lambda k:k[1])
       for i in range(len(trace)):
         if i == 0:
           ti.add(trace[i][0])
