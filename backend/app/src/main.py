@@ -98,12 +98,13 @@ def runMr():
   files = request.form['files']
   mp = Mapper()
   rp = Reduce()
+  had.getData(files,'/tmp/')
   if files[-3:] == 'csv':
-    ma, tl = mp.map1Csv(files)
+    ma, tl = mp.map1Csv('/tmp/'+files)
     tmp, ti, to, tl = rp.reduce1(ma, tl)
     res = rp.reduce2(tmp, ti, to, tl)
-  elif files[-3:] == 'xes':
-    ma, tl = mp.map1Xes(files)
+  elif files[:-3] == 'xes':
+    ma, tl = mp.map1Xes('/tmp/'+files)
     tmp, ti, to, tl = rp.reduce1(ma, tl)
     res = rp.reduce2(tmp, ti, to, tl)
   with open('/tmp/out.json', "w") as reducedLog:
