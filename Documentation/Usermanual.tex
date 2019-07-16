@@ -72,11 +72,21 @@ The main areas are:\\
 
 \section{Installation}
 The version control of this project depends on Git, and our team chose to use GitHub to manage our source code and releases.\\\\
+
 \noindent
-To deploy our WebApp on a server, you must firstly deploy Hadoop of edition 3.2 (\textit{https://hadoop.apache.org/releases.html}) on that server. Hadoop 3.2 supports GNU/Linux and Windows as platform. And softwares development environment like Java and ssh will also be required on the server.
+To deploy our WebApp on a server, you must firstly deploy Hadoop of edition 3.2 (\textit{https://hadoop.apache.org/releases.html} download page like in Fig. 2) on that server. Hadoop 3.2 supports GNU/Linux and Windows as platform. And softwares development environment like Java and ssh will also be required on the server.\\
+\noindent
+There are three modes of deploying Hadoop: Local(Standalone) mode, Pseudo-Distributed Mode and Fully-Distributed Mode. In our project we will use the Pseudo-Distributed mode (\textit{https://hadoop.apache.org/docs/r3.2.0/hadoop-project-dist/hadoop-common/SingleCluster.html\#Pseudo-Distributed\_Operation}), since the limitation of our server, however a real deployment of a App with Hadoop should be in Fully-distributed mode (\textit{https://hadoop.apache.org/docs/r3.2.0/hadoop-project-dist/hadoop-common/ClusterSetup.html}).
 
+\begin{figure}[h]	
+	\centering
+	\includegraphics[scale=0.24]{apache.png}
+	\caption{}
+	\label{fig:label}
+\end{figure}
 
-just go to our GitHub releases page (\textit{https://github.com/xianganc/PraktikumProcessMining/releases}), then download the \textit{setup.sh} to local, run the contents inside the .sh file like in Fig. 2.
+\noindent
+After finishing deploying Hadoop software, we can just go to our GitHub releases page (\textit{https://github.com/xianganc/PraktikumProcessMining/releases}), then download the \textit{setup.sh} to local, run the contents inside the .sh file like in Fig. 3.
 
 \begin{figure}[h]	
 	\centering
@@ -120,6 +130,9 @@ After successfully submited the file, it should be uploaded to our server and be
 
 \subsection{Check out the Output}
 Then you can simply click the \textit{Result Page} on the left side in the main toolbar to check out the output.
+
+\section{Map Reduce Configuration}
+Since we are using the Map Reduce's feature of Hadoop, for the further configuration like \textit{job} and \textit{pipes} for Map Reduce, the user can look up the commands guide on the documentation's website of Hadoop (https://hadoop.apache.org/docs/r3.2.0/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapredCommands.html).
 
 \section{Log out}
 If anytime the logged user want to log out, he can just click the \textit{logout} button on the top right corner to log out.
